@@ -8,11 +8,12 @@
     <section4/>
     <section5/>
     <section6/>
-    <div class="section" id="about">
-      <div class="wrap">
-        <h4>敬请指正</h4>
-      </div>
-    </div>
+    <v-page :isSection="true" :title="'敬请指正'" :id="about"></v-page>
+    <!-- <div class="section" id="about">
+        <div class="wrap">
+          <h4>敬请指正</h4>
+        </div>
+      </div> -->
   </div>
 </template>
 
@@ -22,6 +23,7 @@ import 'fullpage.js';
 
 import MainPage from '../pages/main';
 import Preface from '../pages/preface';
+import VPage from '../pages/simplePage';
 
 import section1 from '../pages/section1';
 import section2 from '../pages/section2';
@@ -40,7 +42,8 @@ export default {
     section3,
     section4,
     section5,
-    section6
+    section6,
+    VPage
   },
   computed: {
     el() {
@@ -88,6 +91,7 @@ export default {
         anchors: this.getAnchors(),
         menu: '#nav',
         easing: 'easeInOutCubic',
+        loopHorizontal: false,
         afterLoad: (anchor, pageName) => {
           if (pageName == 2 && !this.typeStatus) {
             this.typeStatus = true;

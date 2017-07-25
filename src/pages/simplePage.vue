@@ -1,5 +1,5 @@
 <template>
-    <div class="slide" :class="{split:fill}">
+    <div :class="{slide:!isSection,section:isSection,split:fill,about:isSection}">
         <arc-line v-if="fill" :fill="fill"></arc-line>
         <div class="wrap">
             <h4>{{title}}</h4>
@@ -17,6 +17,6 @@ export default {
     components:{
         ArcLine
     },
-    props: ['title', 'content','fill']
+    props: ['title', 'content','fill','isSection']
 };
 </script>
