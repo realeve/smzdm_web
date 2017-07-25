@@ -10,9 +10,10 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "fullpage.js": "^2.9.4",
     "vue": "^2.3.3",
-    "vuex": "^2.3.1",
-    "vue-router": "^2.6.0"
+    "vue-router": "^2.6.0",
+    "vuex": "^2.3.1"
   },
   "repository": {
     "type": "git",
