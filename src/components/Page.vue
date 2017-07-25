@@ -8,12 +8,7 @@
     <section4/>
     <section5/>
     <section6/>
-    <v-page :isSection="true" :title="'敬请指正'" :id="about"></v-page>
-    <!-- <div class="section" id="about">
-        <div class="wrap">
-          <h4>敬请指正</h4>
-        </div>
-      </div> -->
+    <v-page :isSection="true" :title="'敬请指正'"/>
   </div>
 </template>
 
@@ -96,7 +91,10 @@ export default {
           if (pageName == 2 && !this.typeStatus) {
             this.typeStatus = true;
           }
-        }
+        },
+        afterSlideLoad: (anchorLink, index, slideAnchor, slideIndex)=>{
+          console.log(index,slideAnchor)
+        },
       };
 
       this.el.fullpage(params);
