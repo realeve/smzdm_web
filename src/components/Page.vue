@@ -1,35 +1,63 @@
 <template>
   <div>
-    <div class="section page">
-      <video id="up_video" loop muted autoplay data-autoplay>
-        <source src="/static/video/theme.mp4" type="video/mp4">
-      </video>
-      <div class="wrap">
-        <p class="tip content">按
-          <span class="key">F11</span> 键进入全屏</p>
-        <div class="main_title">
-          <h2>什么值得卖</h2>
-          <h3>中国贵金属网上销售市场分析</h3>
-          <small>技术质量部 李宾</small>
-          <small>企管规划部 倪震</small>
+    <main-page></main-page>
+    <preface></preface>
+    <!-- 数据预处理 -->
+    <template>
+      <div class="section green-section">
+        <div class="wrap">
+          <h4>1.数据来源及预处理</h4>
         </div>
       </div>
-    </div>
-    <div class="section split" id="about">
-      <div class="wrap typed">
-        <h4>第一章 公司高层</h4>
+      <simple-page :title="'数据周期'" :content="content2" :fill="'#f5f5f5'"></simple-page>
+      <simple-page :title="'数据范围'" :content="content1"></simple-page>
+    </template>
   
-        <span id="type1"></span>
+    <template>
+      <div class="section red-section">
+        <div class="wrap">
+          <h4>2.贵金属网络销售市场综述</h4>
+        </div>
       </div>
-    </div>
-    <div class="section split" id="chapter2">
-      <div class="wrap">
-        <h4>第二章 优秀宣传语</h4>
+      <simple-page :title="'数据周期'" :content="content2" :fill="'#f5f5f5'"></simple-page>
+      <simple-page :title="'数据范围'" :content="content1"></simple-page>
+    </template>
+  
+    <template>
+      <div class="section green-section">
+        <div class="wrap">
+          <h4>3.用户分析</h4>
+        </div>
       </div>
-    </div>
-    <div class="section split" id="chapter3">
+      <simple-page :title="'数据周期'" :content="content2" :fill="'#f5f5f5'"></simple-page>
+      <simple-page :title="'数据范围'" :content="content1"></simple-page>
+    </template>
+  
+    <template>
+      <div class="section green-section">
+        <div class="wrap">
+          <h4>4.运营策略分析</h4>
+        </div>
+      </div>
+      <simple-page :title="'数据周期'" :content="content2" :fill="'#f5f5f5'"></simple-page>
+      <simple-page :title="'数据范围'" :content="content1"></simple-page>
+    </template>
+  
+    <template>
+      <div class="section green-section">
+        <div class="wrap">
+          <h4>5.充分挖掘数据价值</h4>
+        </div>
+      </div>
+      <simple-page :title="'数据周期'" :content="content2" :fill="'#f5f5f5'"></simple-page>
+      <simple-page :title="'数据范围'" :content="content1"></simple-page>
+    </template>
+  
+    <simple-page :title="'总结'" :content="'这里是总结的内容'" :fill="'#fff'"></simple-page>  
+    <div class="section green-section">
+      <arc-line :fill="'#41b883'"></arc-line>
       <div class="wrap">
-        <h4>第三章 其他宣传语</h4>
+        <h4>敬请指正</h4>
       </div>
     </div>
   </div>
@@ -38,19 +66,31 @@
 <script>
 import $ from 'jquery';
 import 'fullpage.js';
-import Typed from 'typed.js';
+
+import MainPage from '../pages/main';
+import Preface from '../pages/preface';
+import SimplePage from '../pages/simplePage';
+import ArcLine from './ArcLine';
 
 export default {
   name: 'page',
+  components: {
+    MainPage,
+    Preface,
+    SimplePage,
+    ArcLine
+  },
   data() {
     return {
-
-    };
+      content1: '本文研究数据集中在2017年4月1日至6月30日之间，部分商铺采用了历史数据。',
+      content2: '本文研究数据集中在2017年4月1日至6月30日之间，部分商铺采用了历史数据。'
+    }
   },
   computed: {
     el() {
       return $(this.$el);
     },
+    // page初始化
     isInited: {
       get() {
         return this.$store.state.inited;
@@ -58,15 +98,24 @@ export default {
       set(val) {
         this.$store.commit('setInitStatus', val);
       }
+    },
+    // 第二页打字效果初始化
+    typeStatus: {
+      get() {
+        return this.$store.state.typeStatus;
+      },
+      set(val) {
+        this.$store.commit('initTyped', val);
+      }
     }
   },
   methods: {
     getAnchors() {
-      var pages = {
+      let pages = {
         data: [5, 1, 1, 1, 3],
         desc: ['1stPage', '2ndPage', '3rdPage', '4thPage', 'lastPage']
       };
-      var anchors = [];
+      let anchors = [];
       pages.data.map(function (val, idx) {
         anchors.push(pages.desc[idx]);
         for (var i = 1; i < val; i++) {
@@ -76,8 +125,6 @@ export default {
       return anchors;
     },
     init() {
-
-      var typed;
       let params = {
         verticalCentered: true,
         css3: true,
@@ -85,13 +132,9 @@ export default {
         anchors: this.getAnchors(),
         menu: '#nav',
         easing: 'easeInOutCubic',
-        afterLoad: function (anchor, pageName) {
-          if (pageName == 1 && !typed) {
-            typed = new Typed("#type1", {
-              strings: ["一部法规  ^500  一面旗帜", "对成钞未来变革发展根本性、方向性、原则性的系统思考", "与时俱进的价值罗盘", "与战略相接、与文化相通、与员工相融的管理大纲"],
-              typeSpeed: 100,
-              loop: true
-            });
+        afterLoad: (anchor, pageName) => {
+          if (pageName == 2 && !this.typeStatus) {
+            this.typeStatus = true;
           }
         }
       };
@@ -110,34 +153,5 @@ export default {
 </script>
 
 <style scoped lang="less">
-#up_video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 
-.content {
-  z-index: 4;
-}
-
-.main_title {
-  .content;
-  small {
-    color: #fff;
-    font-size: 18pt;
-    padding: 0px 10px;
-  }
-  h2 {
-    font-size: 40pt;
-  }
-  h3 {
-    font-size: 30pt;
-    padding: 40px 0;
-  }
-}
 </style>

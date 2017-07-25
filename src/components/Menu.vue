@@ -1,16 +1,16 @@
 <template>
   <ul id="nav">
     <li data-menuanchor="1stPage" class="active">
-      <a href="#1stPage">前言</a>
+      <a href="#1stPage">背景</a>
     </li>
     <li data-menuanchor="2ndPage">
-      <a href="#2ndPage">综述</a>
+      <a href="#2ndPage">市场综述</a>
     </li>
     <li data-menuanchor="3rdPage">
-      <a href="#3rdPage">用户</a>
+      <a href="#3rdPage">用户分析</a>
     </li>
     <li data-menuanchor="4thPage">
-      <a href="#4thPage">运营</a>
+      <a href="#4thPage">运营分析</a>
     </li>
     <li data-menuanchor="lastPage">
       <a href="#lastPage">总结</a>

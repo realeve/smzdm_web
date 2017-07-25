@@ -1,5 +1,6 @@
 const state = {
-    inited:false
+    inited:false,
+    typeStatus:false
 }
 
 export default state

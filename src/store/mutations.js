@@ -3,6 +3,9 @@
 let mutations = {
     setInitStatus(state,val){
         state.inited = val;
+    },
+    initTyped(state,val){
+        state.typeStatus = val;
     }
 }
 

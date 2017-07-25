@@ -113,7 +113,7 @@ input::-moz-focus-inner {
     blockquote {
         margin: 1em 0
     }
-    .tip{
+    .tip {
         display: none;
     }
 }
@@ -720,11 +720,6 @@ body,
     z-index: 2
 }
 
-#speakers {
-    background: #c0392b;
-    color: #fff
-}
-
 #nav li {
     line-height: 1;
     margin: 0 4px;
@@ -838,7 +833,7 @@ body,
     text-align: center
 }
 
-.schedule-list > li {
+.schedule-list>li {
     border-left: 8px solid #f7df1e;
     padding: 0 0 40px 20px;
     position: relative
@@ -1087,8 +1082,8 @@ body,
 }
 
 @media screen and (max-width: 1000px) {
-    html{
-        font-size:5rem;
+    html {
+        font-size: 5rem;
     }
     .wrapper h3,
     #logo a {

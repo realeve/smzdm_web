@@ -1,5 +1,5 @@
 <template>
-  <div @keyup.enter="fullScreen">
+  <div id="app">
     <v-menu/>
     <page/>
   </div>
@@ -14,33 +14,34 @@ export default {
     Page
   },
   name: 'app',
-  data() {
-    return {
-      isFullScreen: false
-    }
-  },
-  methods: {
-    enterFullscreen() {
-      let element = document.body;
-      let requestMethod = element.requestFullScreen || element.webkitRequestFullscreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullscreen;
-      if (requestMethod) {
-        requestMethod.apply(element);
-      }
-    },
-    fullScreen(event) {
-      console.log(event);
-      if (!this.isFullScreen) {
-        enterFullscreen();
-        this.isFullScreen = true;
-      }
-    }
-  }
+  // data() {
+  //   return {
+  //     isFullScreen: false
+  //   }
+  // },
+  // methods: {
+  //   enterFullscreen() {
+  //     let element = document.body;
+  //     let requestMethod = element.requestFullScreen || element.webkitRequestFullscreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullscreen;
+  //     if (requestMethod) {
+  //       requestMethod.apply(element);
+  //     }
+  //   },
+  //   fullScreen(event) {
+  //     console.log(event);
+  //     if (!this.isFullScreen) {
+  //       enterFullscreen();
+  //       this.isFullScreen = true;
+  //     }
+  //   }
+  // }
 };
 </script>
 
-<style>
+<style lang="less">
 @import './assets/css/main.css';
 @import './assets/css/typed.css';
+@import './assets/css/slider.less';
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
