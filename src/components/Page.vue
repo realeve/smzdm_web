@@ -1,61 +1,14 @@
 <template>
   <div>
-    <main-page></main-page>
-    <preface></preface>
-    <!-- 数据预处理 -->
-    <template>
-      <div class="section green-section">
-        <div class="wrap">
-          <h4>1.数据来源及预处理</h4>
-        </div>
-      </div>
-      <simple-page :title="'数据周期'" :content="content2" :fill="'#f5f5f5'"></simple-page>
-      <simple-page :title="'数据范围'" :content="content1"></simple-page>
-    </template>
-  
-    <template>
-      <div class="section red-section">
-        <div class="wrap">
-          <h4>2.贵金属网络销售市场综述</h4>
-        </div>
-      </div>
-      <simple-page :title="'数据周期'" :content="content2" :fill="'#f5f5f5'"></simple-page>
-      <simple-page :title="'数据范围'" :content="content1"></simple-page>
-    </template>
-  
-    <template>
-      <div class="section green-section">
-        <div class="wrap">
-          <h4>3.用户分析</h4>
-        </div>
-      </div>
-      <simple-page :title="'数据周期'" :content="content2" :fill="'#f5f5f5'"></simple-page>
-      <simple-page :title="'数据范围'" :content="content1"></simple-page>
-    </template>
-  
-    <template>
-      <div class="section green-section">
-        <div class="wrap">
-          <h4>4.运营策略分析</h4>
-        </div>
-      </div>
-      <simple-page :title="'数据周期'" :content="content2" :fill="'#f5f5f5'"></simple-page>
-      <simple-page :title="'数据范围'" :content="content1"></simple-page>
-    </template>
-  
-    <template>
-      <div class="section green-section">
-        <div class="wrap">
-          <h4>5.充分挖掘数据价值</h4>
-        </div>
-      </div>
-      <simple-page :title="'数据周期'" :content="content2" :fill="'#f5f5f5'"></simple-page>
-      <simple-page :title="'数据范围'" :content="content1"></simple-page>
-    </template>
-  
-    <simple-page :title="'总结'" :content="'这里是总结的内容'" :fill="'#fff'"></simple-page>  
-    <div class="section green-section">
-      <arc-line :fill="'#41b883'"></arc-line>
+    <main-page/>
+    <preface/>
+    <section1/>
+    <section2/>
+    <section3/>
+    <section4/>
+    <section5/>
+    <section6/>
+    <div class="section" id="about">
       <div class="wrap">
         <h4>敬请指正</h4>
       </div>
@@ -69,22 +22,25 @@ import 'fullpage.js';
 
 import MainPage from '../pages/main';
 import Preface from '../pages/preface';
-import SimplePage from '../pages/simplePage';
-import ArcLine from './ArcLine';
+
+import section1 from '../pages/section1';
+import section2 from '../pages/section2';
+import section3 from '../pages/section3';
+import section4 from '../pages/section4';
+import section5 from '../pages/section5';
+import section6 from '../pages/section6';
 
 export default {
   name: 'page',
   components: {
     MainPage,
     Preface,
-    SimplePage,
-    ArcLine
-  },
-  data() {
-    return {
-      content1: '本文研究数据集中在2017年4月1日至6月30日之间，部分商铺采用了历史数据。',
-      content2: '本文研究数据集中在2017年4月1日至6月30日之间，部分商铺采用了历史数据。'
-    }
+    section1,
+    section2,
+    section3,
+    section4,
+    section5,
+    section6
   },
   computed: {
     el() {
@@ -112,7 +68,7 @@ export default {
   methods: {
     getAnchors() {
       let pages = {
-        data: [5, 1, 1, 1, 3],
+        data: [3, 1, 1, 2, 1],
         desc: ['1stPage', '2ndPage', '3rdPage', '4thPage', 'lastPage']
       };
       let anchors = [];

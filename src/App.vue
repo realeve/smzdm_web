@@ -42,6 +42,7 @@ export default {
 @import './assets/css/main.css';
 @import './assets/css/typed.css';
 @import './assets/css/slider.less';
+@import './assets/css/fullpage.css';
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

@@ -1,5 +1,5 @@
 <template>
-    <div class="section" :class="{split:fill}">
+    <div class="slide" :class="{split:fill}">
         <arc-line v-if="fill" :fill="fill"></arc-line>
         <div class="wrap">
             <h4>{{title}}</h4>
