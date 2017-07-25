@@ -6,6 +6,9 @@ let mutations = {
     },
     initTyped(state,val){
         state.typeStatus = val;
+    },
+    setTips(state,val){
+        state.tips = val;
     }
 }
 

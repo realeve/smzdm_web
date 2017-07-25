@@ -1193,19 +1193,6 @@ body,
     margin-top: 17%;
 }
 
-.tip {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 13px;
-}
-
-.tip .key {
-    padding: 3px;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 2px;
-}
-
 .wrap .user {
     text-align: right;
     line-height: 0px;

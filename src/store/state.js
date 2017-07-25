@@ -1,6 +1,7 @@
 const state = {
     inited:false,
-    typeStatus:false
+    typeStatus:false,
+    tips:''
 }
 
 export default state

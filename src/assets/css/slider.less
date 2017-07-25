@@ -19,17 +19,55 @@
     .text-left;
 }
 
+.white-text {
+    color: #fff;
+}
+
 .red-section {
     background: #c0392b;
-    color: #fff
+    .white-text;
 }
 
 .green-section {
     background-color: #41b883;
-    color: #fff;
+    .white-text;
 }
 
 .dark-section {
     background-color: #222;
+    .white-text;
+}
+
+.tip-text {
+    position: absolute;
+    font-size: 13px;
     color: #fff;
+}
+
+.tip,
+.page-no {
+    .tip-text;
+    right: 10px;
+}
+
+.clock {
+    .tip-text;
+    left: 10px;
+}
+
+.tip .key,
+.page-no,
+.clock {
+    padding: 3px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 2px;
+}
+
+.tip {
+    top: 10px;
+}
+
+.page-no,
+.clock {
+    bottom: 10px;
 }

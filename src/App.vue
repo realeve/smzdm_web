@@ -2,39 +2,22 @@
   <div id="app">
     <v-menu/>
     <page/>
+    <tips/>
   </div>
 </template>
 
 <script>
 import VMenu from './components/Menu';
 import Page from './components/Page';
+import Tips from './components/Tips';
+
 export default {
   components: {
     VMenu,
-    Page
+    Page,
+    Tips
   },
-  name: 'app',
-  // data() {
-  //   return {
-  //     isFullScreen: false
-  //   }
-  // },
-  // methods: {
-  //   enterFullscreen() {
-  //     let element = document.body;
-  //     let requestMethod = element.requestFullScreen || element.webkitRequestFullscreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullscreen;
-  //     if (requestMethod) {
-  //       requestMethod.apply(element);
-  //     }
-  //   },
-  //   fullScreen(event) {
-  //     console.log(event);
-  //     if (!this.isFullScreen) {
-  //       enterFullscreen();
-  //       this.isFullScreen = true;
-  //     }
-  //   }
-  // }
+  name: 'app'
 };
 </script>
 

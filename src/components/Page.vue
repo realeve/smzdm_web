@@ -8,7 +8,7 @@
     <section4/>
     <section5/>
     <section6/>
-    <v-page :isSection="true" :title="'敬请指正'"/>
+    <v-page :isSection="true" :title="'敬请指正'" />
   </div>
 </template>
 
@@ -61,6 +61,14 @@ export default {
       set(val) {
         this.$store.commit('initTyped', val);
       }
+    },
+    tips: {
+      get() {
+        return this.$store.state.tips;
+      },
+      set(val) {
+        this.$store.commit('setTips', val);
+      }
     }
   },
   methods: {
@@ -78,6 +86,10 @@ export default {
       });
       return anchors;
     },
+    setCurIdx(sectionIdx, slideIdx) {
+      let slideNum = $(`.section:nth(${sectionIdx - 1})`).find('.slide').length;
+      this.tips = slideNum > 1 ? `${slideIdx + 1}/${slideNum}` : '';
+    },
     init() {
       let params = {
         verticalCentered: true,
@@ -87,14 +99,15 @@ export default {
         menu: '#nav',
         easing: 'easeInOutCubic',
         loopHorizontal: false,
-        afterLoad: (anchor, pageName) => {
-          if (pageName == 2 && !this.typeStatus) {
+        afterLoad: (anchorLink, index) => {
+          if (index == 2 && !this.typeStatus) {
             this.typeStatus = true;
           }
+          this.setCurIdx(index, 0);
         },
-        afterSlideLoad: (anchorLink, index, slideAnchor, slideIndex)=>{
-          console.log(index,slideAnchor)
-        },
+        afterSlideLoad: (anchorLink, index, slideAnchor, slideIndex) => {
+          this.setCurIdx(index, slideAnchor);
+        }
       };
 
       this.el.fullpage(params);
