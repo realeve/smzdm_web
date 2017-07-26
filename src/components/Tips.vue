@@ -1,5 +1,6 @@
 <template>
   <div>
+    <audio v-if="playAudio" src="/static/audio/bgm.mp3" ref="audio" autoplay loop></audio>
     <p class="page-no" v-show="tips!=''">
       {{tips}}
     </p>
@@ -18,6 +19,9 @@ export default {
     }
   },
   computed: {
+    playAudio(){
+      return process.env.NODE_ENV !== 'production';
+    },
     tips: {
       get() {
         return this.$store.state.tips;
@@ -49,8 +53,9 @@ export default {
       this.clock = this.calcTime();
     }
   },
-  created() {
+  mounted(){
     this.timeInterval();
+    this.$refs.audio.volume = 0.5;
   }
 };
 </script>
