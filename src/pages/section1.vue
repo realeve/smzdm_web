@@ -50,11 +50,11 @@
             <div class="wrap">
                 <h4>数据量</h4>
                 <div class="content row">
-                    <div class="col-8 center">
+                    <div class="col-6 right">
                         <img src="/static/img/section01/datalist.jpg" alt="数据量">
                     </div>
-                    <div>
-                        根据各平台的特点，主要采集了用户咨询、商品交易记录、用户评论、商品基本属性(名称、价格、材质)、销售周期、库存、上海黄金交易所每日金价等信息
+                    <div class="col-4 margin-left-20">
+                        根据各平台的特点，主要采集了用户咨询、商品交易记录、用户评论、商品基本属性(名称、价格、材质)、销售周期、库存、上海黄金交易所每日金价等信息。
                     </div>
                 </div>
             </div>

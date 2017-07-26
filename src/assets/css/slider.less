@@ -66,12 +66,27 @@
     font-weight: 100;
 }
 
+
 /*水平对齐*/
+
 .center {
     display: flex;
     justify-content: center;
 }
+
+.right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.left {
+    display: flex;
+    justify-content: flex-start;
+}
+
+
 /*垂直对齐*/
+
 .v-center {
     display: flex;
     align-items: center;
@@ -191,7 +206,6 @@
     .content {
         max-width: 90%;
         .text-left;
-        div,
         p {
             margin: 20px 0;
         }
@@ -251,15 +265,33 @@
 
 .row {
     display: flex;
-    justify-content: space-between;
     .col {
         flex: 1;
     }
-    .loop( @count )when( @count > 0) {
+    .col-loop( @count )when( @count > 0) {
         .col-@{count} {
             flex: 0 0 @count*100/12%;
+            padding: 0 10px;
         }
-        .loop((@count - 1));
+        .col-loop((@count - 1));
     }
-    .loop(12);
+    .col-loop(12);
 }
+
+.margin-loop(@count) when(@count>0) {
+    .margin-top-@{count} {
+        margin-top: (1px*@count);
+    }
+    .margin-left-@{count} {
+        margin-left: (1px*@count);
+    }
+    .margin-right-@{count} {
+        margin-right:(1px*@count);
+    }
+    .margin-bottom-@{count} {
+        margin-bottom: (1px*@count);
+    }
+    .margin-loop((@count - 10));
+}
+
+.margin-loop(100);
