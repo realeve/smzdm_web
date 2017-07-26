@@ -224,8 +224,7 @@
         border-bottom-right-radius: 2px;
         border-top-right-radius: 2px;
         color: @main-text;
-        padding: .5em 1em;
-        margin: 0;
+        padding: .5em 1em; // margin: 0;
         font-size: 16pt;
         &:before {
             content: '!';
@@ -258,8 +257,16 @@
         border: 4px solid #fff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
     }
+    ol {
+        margin-left: 1em;
+    }
 }
 
+.underline {
+    text-decoration: none;
+    box-shadow: 0 1px;
+    padding-bottom:2px;
+}
 
 /* 响应式布局 */
 
@@ -286,7 +293,7 @@
         margin-left: (1px*@count);
     }
     .margin-right-@{count} {
-        margin-right:(1px*@count);
+        margin-right: (1px*@count);
     }
     .margin-bottom-@{count} {
         margin-bottom: (1px*@count);

@@ -60,6 +60,20 @@
             </div>
         </div>
         <div class="slide">
+            <div class="wrap">
+                <h4>数据采集与存储</h4>
+                <div class="content">
+                    <ol>
+                        <li>使用<span class="bold">NodeJS</span>编写<strong>爬虫程序</strong>采集各大平台数据，数据存储至<span class="bold">MySQL数据库</span></li>
+                        <li>不涉及机密与他人隐私，所收集数据仅用于本研究，不提供给任何机构或个人</li>
+                    </ol>
+                    <blockquote class="margin-top-20">
+                        主要难点包括<span class="underline">数据增量采集与备份、反爬虫策略、用户请求模拟以及非结构化数据处理</span>等方面。
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+        <div class="slide">
             <video loop muted autoplay data-autoplay>
                 <source src="/static/video/web_crawler_sample.mp4" type="video/mp4">
             </video>
