@@ -50,7 +50,7 @@
                 <div class="content">
                     <ul>
                         <li>
-                            <a href="http://www.chinagoldcoin.net" target="_blank">中国金币</a>
+                            <a href="http://www.chinagoldcoin.net" target="_blank" rel="noopener">中国金币</a>
                         </li>
                         <li>这里是列表示例</li>
                         <li>这里是列表示例</li>
