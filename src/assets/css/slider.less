@@ -19,22 +19,32 @@
     .text-left;
 }
 
+@red: #c0392b;
+@white: #fafafa;
+@vgreen: #4fc08d;
+@dark: #222;
+@vblue: #313640;
 .white-text {
-    color: #fff;
+    color: @white;
 }
 
 .red-section {
-    background: #c0392b;
+    background: @red;
     .white-text;
 }
 
 .green-section {
-    background-color: #41b883;
+    background-color: @vgreen;
     .white-text;
 }
 
 .dark-section {
-    background-color: #222;
+    background-color: @dark;
+    .white-text;
+}
+
+.blue-section {
+    background-color: @vblue;
     .white-text;
 }
 
@@ -70,4 +80,16 @@
 .page-no,
 .clock {
     bottom: 10px;
+}
+
+.wrap {
+    .content {
+        div,
+        p {
+            margin: 20px 0;
+        }
+    }
+    strong {
+        color: @vgreen;
+    }
 }
