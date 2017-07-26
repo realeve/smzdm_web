@@ -5,7 +5,7 @@
                 <h4>1.数据来源及预处理</h4>
             </div>
         </div>
-        <div class="slide">
+        <div class="slide light-section">
             <div class="wrap">
                 <h4>数据周期</h4>
                 <div class="content">
@@ -46,7 +46,7 @@
                 </div>
             </div>
         </div>
-        <div class="slide">
+        <div class="slide light-section">
             <div class="wrap">
                 <h4>数据量</h4>
                 <div class="content row">
@@ -73,7 +73,7 @@
                 </div>
             </div>
         </div>
-        <div class="slide">
+        <div class="slide light-section">
             <video loop muted autoplay data-autoplay>
                 <source src="/static/video/web_crawler_sample.mp4" type="video/mp4">
             </video>
@@ -91,7 +91,7 @@
                 </div>
             </div>
         </div>
-        <div class="slide">
+        <div class="slide light-section">
             <div class="wrap">
                 <h4>a标签及列表示例</h4>
                 <div class="content">
