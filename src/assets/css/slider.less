@@ -1,24 +1,6 @@
+/*样式设置*/
+
 @title-size: 30pt;
-.section-title {
-    font-size: @title-size;
-}
-
-.text-center {
-    text-align: center;
-}
-
-.text-left {
-    text-align: left;
-}
-
-.wrap {
-    h4 {
-        font-size: @title-size;
-        padding-bottom: 20px;
-    }
-    .text-left;
-}
-
 @orange: #c0392b;
 @red: #e06665;
 @white: #fafafa;
@@ -35,6 +17,9 @@
 .red-text {
     color: @red;
 }
+
+
+/* 背景颜色 */
 
 .red-section {
     background: @orange;
@@ -56,6 +41,76 @@
     .white-text;
 }
 
+.split {
+    background-color: #f5f5f5;
+}
+
+
+/* 文本对齐及样式 */
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.thin-text {
+    font-weight: 100;
+}
+
+
+/* 图片页背景 */
+
+.page,
+.about {
+    background-color: '#222';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 10% 50px;
+    text-align: center;
+    position: relative;
+    background: linear-gradient(to bottom, rgba(63, 56, 56, 0.6), rgba(63, 56, 56, 0.4)), url(../image/main_bg.jpg);
+    background-size: cover;
+    background-position: center;
+    .white-text;
+}
+
+
+/* 导航样式 */
+
+#nav {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 2px;
+    position: fixed;
+    right: 2em;
+    top: 30%;
+    z-index: 100;
+    text-align: center;
+    li {
+        line-height: 1;
+        margin: 0 4px;
+        padding: 10px 0;
+        transition: all .3s ease-out;
+        -webkit-transition: all .3s ease-out;
+        width: 1.3em;
+        &:hover {
+            border-color: #3C6493
+        }
+    }
+    a {
+        color: rgba(255, 255, 255, 0.5);
+        text-decoration: none;
+        font-size: 15px;
+    }
+}
+
+
+/*START: 提示信息：按键、计时器、页码 */
+
 .tip-text {
     position: absolute;
     font-size: 13px;
@@ -68,14 +123,7 @@
     right: 10px;
 }
 
-.clock {
-    .tip-text;
-    left: 10px;
-}
-
-.tip .key,
-.page-no,
-.clock {
+.tip-wrapper {
     padding: 3px;
     background-color: rgba(0, 0, 0, 0.8);
     border-radius: 2px;
@@ -83,25 +131,63 @@
 
 .tip {
     top: 10px;
+    .key {
+        .tip-wrapper;
+    }
+}
+
+.clock {
+    .tip-text;
+    left: 10px;
 }
 
 .page-no,
 .clock {
     bottom: 10px;
+    .tip-wrapper;
 }
 
-.slide video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+
+/*END: 提示信息：按键、计时器、页码 */
+
+
+/* slide 内页样式 */
+
+.slide,
+.section {
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 
 .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 22pt;
+    .end {
+        line-height: 60pt;
+        margin-top: 10%;
+        text-align: center;
+    }
     .content {
+        max-width: 90%;
+        .text-left;
         div,
         p {
             margin: 20px 0;
         }
+    }
+    h4 {
+        .thin-text;
+        padding-bottom: 10px;
+        font-size: @title-size;
     }
     a {
         color: @vgreen;

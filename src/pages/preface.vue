@@ -1,5 +1,5 @@
 <template>
-    <div class="section" id="about">
+    <div class="section about">
         <div class="wrap">
             <h4>背景</h4>
             <div class="typed">

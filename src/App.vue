@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div>
     <v-menu/>
     <page/>
     <tips/>
@@ -22,14 +22,8 @@ export default {
 </script>
 
 <style lang="less">
-@import './assets/css/main.css';
+@import './assets/css/reset.css';
 @import './assets/css/typed.css';
 @import './assets/css/slider.less';
 @import './assets/css/fullpage.css';
-#app {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
 </style>

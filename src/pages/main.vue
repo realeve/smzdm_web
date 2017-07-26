@@ -4,7 +4,7 @@
             <source src="/static/video/theme.mp4" type="video/mp4">
         </video>
         <div class="wrap">
-            <p class="tip content">按
+            <p class="tip">按
                 <span class="key">F11</span> 键进入全屏</p>
             <div class="main_title">
                 <h2>什么值得卖</h2>

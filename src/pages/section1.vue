@@ -28,6 +28,14 @@
         </div>
         <div class="slide">
             <div class="wrap">
+                <h4>异常情况自动发送邮件</h4>
+                <div class="content">
+                    <img src="/static/img/section01/mail.jpg" alt="爬虫错误提示">
+                </div>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="wrap">
                 <h4>数据周期</h4>
                 <div class="content">
                     <blockquote>
@@ -50,14 +58,6 @@
                         <li>这里是列表示例</li>
                         <li>这里是列表示例</li>
                     </ul>
-                </div>
-            </div>
-        </div>
-        <div class="slide">
-            <div class="wrap">
-                <h4>图片示例</h4>
-                <div class="content">
-                    <img src="/static/img/main.png" alt="">
                 </div>
             </div>
         </div>

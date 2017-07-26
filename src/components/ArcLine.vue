@@ -10,9 +10,15 @@
 
 export default {
     props: {
-        fill:{
-            default:'#f5f5f5'
+        fill: {
+            default: '#f5f5f5'
         }
     }
 };
 </script>
+
+<style scoped>
+.wave-svg {
+    transform: translate(0, -96%)
+}
+</style>
