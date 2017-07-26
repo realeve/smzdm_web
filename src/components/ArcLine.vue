@@ -9,6 +9,7 @@
 <script>
 
 export default {
+    name:'arc-line',
     props: {
         fill: {
             default: '#f5f5f5'

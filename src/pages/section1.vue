@@ -60,11 +60,12 @@
                     </ul>
                 </div>
             </div>
+        <arc-line :fill="'#4fc08d'"></arc-line>
         </div>
     </div>
 </template>
 
 <script>
-export default {
+export default { 
 };
 </script>

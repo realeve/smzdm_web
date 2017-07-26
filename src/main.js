@@ -6,6 +6,14 @@ import App from './App';
 import store from './store';
 Vue.config.productionTip = false;
 
+
+// Register public component
+import ArcLine from './components/ArcLine.vue';
+Vue.component('arc-line', ArcLine);
+
+import VChart from './components/ECharts';
+Vue.component('v-chart',VChart);
+
 new Vue({
   el: '#app',
   // router,
