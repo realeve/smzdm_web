@@ -1,6 +1,7 @@
 /*样式设置*/
 
 @title-size: 30pt;
+@text-size: 20pt;
 @orange: #c0392b;
 @red: #e06665;
 @white: #fff;
@@ -15,7 +16,12 @@
 }
 
 .red-text {
-    color: @red;
+    color: @quote-color;
+}
+
+.strong,
+.bold {
+    font-weight: bold;
 }
 
 
@@ -41,7 +47,7 @@
     .white-text;
 }
 
-.split {
+.split,.light-section {
     background-color: #f5f5f5;
 }
 
@@ -61,14 +67,39 @@
 }
 
 
+/*水平对齐*/
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.left {
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+/*垂直对齐*/
+
+.v-center {
+    display: flex;
+    align-items: center;
+}
+
+
 /* 图片页背景 */
 
 .page,
 .about {
     background-color: '#222';
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    .center;
+    .v-center;
     flex-wrap: wrap;
     padding: 0 10% 50px;
     text-align: center;
@@ -160,14 +191,13 @@
 }
 
 .wrap {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    .center;
+    .v-center;
     flex-direction: column;
     height: 100%;
     margin: 0;
     padding: 0;
-    font-size: 22pt;
+    font-size: @text-size;
     h4 {
         .thin-text;
         padding-bottom: 10px;
@@ -176,7 +206,6 @@
     .content {
         max-width: 90%;
         .text-left;
-        div,
         p {
             margin: 20px 0;
         }
@@ -195,8 +224,7 @@
         border-bottom-right-radius: 2px;
         border-top-right-radius: 2px;
         color: @main-text;
-        padding: .5em 1em;
-        margin: 0;
+        padding: .5em 1em; // margin: 0;
         font-size: 16pt;
         &:before {
             content: '!';
@@ -217,8 +245,8 @@
         ul,
         ol {
             padding-left: 1em;
-            li{
-                padding:5px 0;
+            li {
+                padding: 5px 0;
             }
         }
     }
@@ -229,5 +257,48 @@
         border: 4px solid #fff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
     }
-    font-size: 20pt;
+    ol {
+        margin-left: 1em;
+    }
 }
+
+.underline {
+    text-decoration: none;
+    box-shadow: 0 1px;
+    padding-bottom:2px;
+}
+
+/* 响应式布局 */
+
+.row {
+    display: flex;
+    .col {
+        flex: 1;
+    }
+    .col-loop( @count )when( @count > 0) {
+        .col-@{count} {
+            flex: 0 0 @count*100/12%;
+            padding: 0 10px;
+        }
+        .col-loop((@count - 1));
+    }
+    .col-loop(12);
+}
+
+.margin-loop(@count) when(@count>0) {
+    .margin-top-@{count} {
+        margin-top: (1px*@count);
+    }
+    .margin-left-@{count} {
+        margin-left: (1px*@count);
+    }
+    .margin-right-@{count} {
+        margin-right: (1px*@count);
+    }
+    .margin-bottom-@{count} {
+        margin-bottom: (1px*@count);
+    }
+    .margin-loop((@count - 10));
+}
+
+.margin-loop(100);

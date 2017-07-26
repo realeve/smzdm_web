@@ -19,7 +19,7 @@ export default {
     }
   },
   computed: {
-    playAudio(){
+    playAudio() {
       return false && process.env.NODE_ENV !== 'production';
     },
     tips: {
@@ -53,9 +53,11 @@ export default {
       this.clock = this.calcTime();
     }
   },
-  mounted(){
+  mounted() {
     this.timeInterval();
-    this.$refs.audio.volume = 0.5;
+    if (this.playAudio) {
+      this.$refs.audio.volume = 0.5;
+    }
   }
 };
 </script>
