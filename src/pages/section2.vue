@@ -14,7 +14,8 @@
                 </div>
             </div>
         </div>
-        <v-page title="文字云" content="所有商品、京东TOP100"></v-page>
+        <v-chart :option="option.wordCloudAll"/>
+        <v-chart :option="option.wordCloudTop100"/>
         <v-chart :option="option.wordCloud"/>
         <div class="slide light-section">
             <div class="wrap">
@@ -54,16 +55,21 @@
         
         <v-page title="产品线的维持" content="随着时间的推移存续的商品数逐渐减少，整体市场中商品相比热销商品的生命周期下降更为明显，这也意味着有大量的商品将被市场所淘汰，<strong>商家应当定期上新维持良好的产品线。</strong>"></v-page>
 
-        <v-page title="商品数量" content="京东TOP20店铺"></v-page>
+        <v-chart :option="option.shopTop20"/>
 
-        <v-page title="长线产品" content="以周生生、周大福等商铺为代表的市场业绩较高的卖家，其<strong>长线产品</strong>对于商铺评价销售业绩的拉动十分显著。"></v-page>
+        <v-page fill="true" title="长线产品" content="以周生生、周大福等商铺为代表的市场业绩较高的卖家，其<strong>长线产品</strong>对于商铺评价销售业绩的拉动十分显著。"></v-page>
 
         <v-chart :option="option.top10lifecycle"/>
 
         <v-page title="周生生生命周期数据图"></v-page>
 
-        <v-chart :option="option.cbpcSaleNum"/>
-        <v-chart/>
+        <v-page title="3.贵金属市场规模" content="以<strong>京东和天猫</strong>为代表的贵金属市场占据了整个充分竞争市场的绝大部分份额，我们将以这两个平台的历史销售记录推测市场规模。"></v-page>
+
+        <v-page fill="true" title="天猫市场规模" content="根据天猫商城贵金属市场商铺中<strong>25800件</strong>商品的历史销售业绩以及现价，我们计算出天猫商城贵金属历史销售业绩大约是<strong>50亿元</strong>人民币。根据近年来移动支付的发展以及天猫双11销售总额的逐年上升，我们可以<span class='underline bold'>假设天猫的50亿元销售额是逐渐递增的状态</span>，而这一规律在京东25万件商品的销售热度得以印证:"></v-page>
+
+        <v-chart :option="option.jdSale2010"/>
+        <!-- <v-chart :option="option.cbpcSaleNum"/>
+        <v-chart/> -->
     </div>
 </template>
 
