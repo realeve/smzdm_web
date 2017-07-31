@@ -5,16 +5,16 @@
                 <h4>4.运营策略分析</h4>
             </div>
         </div>
-        <simple-page :title="'数据周期'" :content="content2" :fill="'#f5f5f5'"></simple-page>
-        <simple-page :title="'数据范围'" :content="content1"></simple-page>
+        <v-page :title="'数据周期'" :content="content2" :fill="'#222'"></v-page>
+        <v-page :title="'数据范围'" :content="content1"></v-page>
     </div>
 </template>
 
 <script>
-import SimplePage from './simplePage';
+import VPage from './VPage';
 export default {
     components: {
-        SimplePage
+        VPage
     },
     data() {
         return {

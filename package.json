@@ -10,6 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "animate.css": "^3.5.2",
     "echarts": "^3.6.2",
     "echarts-wordcloud": "^1.1.0",
     "fullpage.js": "^2.9.4",

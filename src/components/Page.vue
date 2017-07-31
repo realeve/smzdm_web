@@ -8,7 +8,7 @@
     <section4/>
     <section5/>
     <section6/>
-    <v-page :isSection="true" :title="'敬请指正'" />
+    <v-page isSection="true" title="敬请指正" />
   </div>
 </template>
 
@@ -18,7 +18,7 @@ import 'fullpage.js';
 
 import MainPage from '../pages/main';
 import Preface from '../pages/preface';
-import VPage from '../pages/simplePage';
+import VPage from '../pages/VPage';
 
 import section1 from '../pages/section1';
 import section2 from '../pages/section2';
