@@ -92,15 +92,14 @@
             </video>
         </div>
     
-        <page title="异常情况自动发送邮件" content='<img src="/static/img/section01/mail.jpg" alt="爬虫错误提示">' />
-    
-        <page :fill="true" title="中文分词" content='<blockquote>亚马逊平台曾经的统计数据表示，具有差评的商品平均转化率甚至还高于没有评价的商品。评价作为商家服务的表象体现，既承载了用户对于商品和服务的意见和态度，更承载了用户对商品和服务的诉求。</blockquote>'></page>
+        <v-page title="异常情况自动发送邮件" content='<img src="/static/img/section01/mail.jpg" alt="爬虫错误提示">' />
     
         <div class="slide">
             <div class="wrap">
                 <h4>中文分词</h4>
-                <div class="content">
-                    <span class="word-seg" v-for="word in wordSeg" :key="word" :class="{'word-red':word=='商品'}">{{word}}</span>
+                <div class="content segment" @click="segWord">
+                    <span v-for="word in wordSeg" :key="word" :class="{word:wordStatus,'red-text':wordStatus && word=='商品'}">{{word}}</span>
+                    <h6>(点击上方文字分词)</h6>
                 </div>
             </div>
         </div>
@@ -118,7 +117,7 @@
             </div>
         </div>
     
-        <page title="自然语言处理(NLP)" content="Natural Language Processing，研究人与计算机之间用自然语言进行有效通信的理论和方法，本文主要使用NLP做语句情感分析。"></page>
+        <v-page title="自然语言处理(NLP)" content="Natural Language Processing，研究人与计算机之间用自然语言进行有效通信的理论和方法，本文主要使用NLP做语句情感分析。"></v-page>
     
         <div class="slide light-section">
             <div class="wrap">
@@ -135,7 +134,7 @@
             </div>
         </div>
     
-        <page content='<img src="/static/img/section01/comment.jpg" alt="带有负面情绪的五星好评">' title="带有负面情绪的五星好评"></page>
+        <v-page content='<img src="/static/img/section01/comment.jpg" alt="带有负面情绪的五星好评">' title="带有负面情绪的五星好评"></v-page>
     
         <div class="slide light-section">
             <div class="wrap">
@@ -158,16 +157,36 @@
     </div>
 </template>
 <style lang="less" scoped>
-.word-seg {
-    background: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    margin: 0 3px;
-    padding: 3px;
+.segment {
+    span {
+        background: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        padding: 3px;
+    }
+    .red-text {
+        background: #f66;
+        color: #fff;
+    }
+}
+
+.word-margin {
+    margin: 0 5px;
     border-radius: 2px;
 }
 
-.word-red {
-    background: #f66;
+.word {
+    animation: wordSegment 2s; // animation-direction:alternate;
+    .word-margin;
+}
+
+@keyframes wordSegment {
+    0% {
+        margin: 0 0px;
+        border-radius: 0px;
+    }
+    100% {
+        .word-margin;
+    }
 }
 
 @bar-height: 50px;
@@ -211,15 +230,21 @@
 }
 </style>
 <script>
-import page from './simplePage';
+import VPage from './VPage';
 export default {
     components: {
-        page
+        VPage
     },
     data() {
         return {
+            wordStatus: false,
             wordSeg: ['亚马逊', '平台', '曾经', '的', '统计', '数据', '表示', '，', '具有', '差', '评', '的', '商品', '平均', '转化率', '甚至', '还', '高于', '没有', '评价', '的', '商品', '。', '评价', '作为', '商家', '服务', '的', '表象', '体现', '，', '既', '承载', '了', '用户', '对于', '商品', '和', '服务', '的', '意见', '和', '态度', '，', '更', '承载', '了', '用户', '对', '商品', '和', '服务', '的', '诉求', '。']
         };
+    },
+    methods: {
+        segWord() {
+            this.wordStatus = !this.wordStatus;
+        }
     }
 };
 </script>

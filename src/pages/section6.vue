@@ -1,17 +1,16 @@
 <template>
     <div class="section">    
-        <simple-page :title="'总结'" :content="'这里是总结的内容'" :fill="'#fff'"></simple-page>
-        <simple-page :title="'总结'" :content="'这里是总结的内容'" :fill="'#fff'"></simple-page>
-        <simple-page :title="'总结'" :content="'这里是总结的内容'" :fill="'#fff'"></simple-page>
+        <v-page :title="'总结'" :content="'这里是总结的内容'" :fill="'#fff'"></v-page>
+        <v-page :title="'总结'" :content="'这里是总结的内容'" :fill="'#fff'"></v-page>
+        <v-page :title="'总结'" :content="'这里是总结的内容'" :fill="'#fff'"></v-page>
     </div>
 </template>
 
 <script>
-import SimplePage from './simplePage';
-
+import VPage from './VPage';
 export default {
     components: {
-        SimplePage
+        VPage
     },
     data() {
         return {

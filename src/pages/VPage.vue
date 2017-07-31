@@ -10,12 +10,13 @@
 </template>
 
 <script>
-import ArcLine from '../components/ArcLine';
+// import ArcLine from '../components/ArcLine';
 
 export default {
-    components:{
-        ArcLine
-    },
+    // components:{
+    //     ArcLine
+    // },
+    name:'v-page',
     props: ['title', 'content','fill','isSection']
 };
 </script>

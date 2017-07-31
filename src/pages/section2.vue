@@ -14,7 +14,7 @@
                 </div>
             </div>
         </div>
-        <page title="文字云" content="所有商品、京东TOP100"></page>
+        <v-page title="文字云" content="所有商品、京东TOP100"></v-page>
         <v-chart :option="option.wordCloud"/>
         <div class="slide light-section">
             <div class="wrap">
@@ -52,15 +52,15 @@
 
         <v-chart :option="option.lifecycle"/>
         
-        <page title="产品线的维持" content="随着时间的推移存续的商品数逐渐减少，整体市场中商品相比热销商品的生命周期下降更为明显，这也意味着有大量的商品将被市场所淘汰，<strong>商家应当定期上新维持良好的产品线。</strong>"></page>
+        <v-page title="产品线的维持" content="随着时间的推移存续的商品数逐渐减少，整体市场中商品相比热销商品的生命周期下降更为明显，这也意味着有大量的商品将被市场所淘汰，<strong>商家应当定期上新维持良好的产品线。</strong>"></v-page>
 
-        <page title="商品数量" content="京东TOP20店铺"></page>
+        <v-page title="商品数量" content="京东TOP20店铺"></v-page>
 
-        <page title="长线产品" content="以周生生、周大福等商铺为代表的市场业绩较高的卖家，其<strong>长线产品</strong>对于商铺评价销售业绩的拉动十分显著。"></page>
+        <v-page title="长线产品" content="以周生生、周大福等商铺为代表的市场业绩较高的卖家，其<strong>长线产品</strong>对于商铺评价销售业绩的拉动十分显著。"></v-page>
 
         <v-chart :option="option.top10lifecycle"/>
 
-        <page title="周生生生命周期数据图"></page>
+        <v-page title="周生生生命周期数据图"></v-page>
 
         <v-chart :option="option.cbpcSaleNum"/>
         <v-chart/>
@@ -68,13 +68,13 @@
 </template>
 
 <script>
-    import page from './SimplePage';
+import VPage from './VPage';
 
     import option from '../lib/option/section2';
 
     export default {
         components: {
-            page
+            VPage
         },
         data(){
             return{
