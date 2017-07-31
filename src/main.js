@@ -14,8 +14,6 @@ Vue.component('arc-line', ArcLine);
 import VChart from './components/ECharts';
 Vue.component('v-chart',VChart);
 
-import 'animate.css';
-
 new Vue({
   el: '#app',
   // router,
