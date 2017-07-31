@@ -161,7 +161,6 @@
     span {
         background: rgba(0, 0, 0, 0.8);
         color: #fff;
-        padding: 3px;
     }
     .red-text {
         background: #f66;
@@ -171,6 +170,7 @@
 
 .word-margin {
     margin: 0 5px;
+    padding: 3px;
     border-radius: 2px;
 }
 
@@ -181,8 +181,9 @@
 
 @keyframes wordSegment {
     0% {
-        margin: 0 0px;
-        border-radius: 0px;
+        margin: 0;
+        padding:0;
+        border-radius: 0;
     }
     100% {
         .word-margin;
