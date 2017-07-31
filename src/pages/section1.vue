@@ -83,7 +83,12 @@
         </div>
         <div class="slide light-section">
             <video loop muted autoplay data-autoplay>
-                <source src="/static/video/web_crawler_sample.mp4" type="video/mp4">
+                <source src="/static/video/web_crawler_sample01.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="slide light-section">
+            <video loop muted autoplay data-autoplay>
+                <source src="/static/video/web_crawler_sample02.mp4" type="video/mp4">
             </video>
         </div>
     
