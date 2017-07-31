@@ -3,6 +3,7 @@
         <div class="slide blue-section">
             <div class="wrap">
                 <h4>1.数据来源及预处理</h4>
+                <p class="content">爬虫、分词、可视化</p>
             </div>
         </div>
         <div class="slide light-section">
@@ -55,6 +56,7 @@
                     </div>
                     <div class="col-4 margin-left-20">
                         根据各平台的特点，主要采集了用户咨询、商品交易记录、用户评论、商品基本属性(名称、价格、材质)、销售周期、库存、上海黄金交易所每日金价等信息。
+                        <p>数据存储至数据库后约<strong>6GB</strong>。</p>
                     </div>
                 </div>
             </div>
@@ -77,33 +79,64 @@
             <video loop muted autoplay data-autoplay>
                 <source src="/static/video/web_crawler_sample.mp4" type="video/mp4">
             </video>
-            <div class="wrap">
-                <div class="main_title">
-                    <h4>这里可以写一些文字</h4>
-                </div>
-            </div>
         </div>
+        
+        <page title="异常情况自动发送邮件" 
+              content='<img src="/static/img/section01/mail.jpg" alt="爬虫错误提示">'/>
+
+        <page :fill="true" title="中文分词" content='<blockquote>亚马逊平台曾经的统计数据表示，具有差评的商品平均转化率甚至还高于没有评价的商品。评价作为商家服务的表象体现，既承载了用户对于商品和服务的意见和态度，更承载了用户对商品和服务的诉求。</blockquote>'></page>
+
         <div class="slide">
             <div class="wrap">
-                <h4>异常情况自动发送邮件</h4>
+                <h4>中文分词</h4>
                 <div class="content">
-                    <img src="/static/img/section01/mail.jpg" alt="爬虫错误提示">
+                    <span class="word-seg" v-for="word in wordSeg" :class="{'word-red':word=='商品'}">{{word}}</span>
                 </div>
             </div>
         </div>
         <div class="slide light-section">
             <div class="wrap">
-                <h4>a标签及列表示例</h4>
+                <h4>中文分词</h4>
+                <ol class="content">
+                    <li>盘古分词</li>
+                    <li>结巴分词</li>
+                    <li>BosonNLP</li>
+                    <li>新浪云</li>
+                    <li>搜狗分词</li>
+                    <li class="strong red-text">腾讯文智</li>
+                </ol>
+            </div>
+        </div>
+
+        <page title="自然语言处理(NLP)" content="Natural Language Processing，研究人与计算机之间用自然语言进行有效通信的理论和方法，本文主要使用NLP做语句情感分析。"></page>
+        
+        <div class="slide light-section">
+            <div class="wrap">
+                <div class="content">
+                    <blockquote>
+                        这个手链是代别人买的，东西挺好。只是没有送小物品，说好了有的。为什么没有送？我自己买的却送了。真不知为什么？开店不能这么开啊！
+                        <h5 class="text-right">———— 摘自京东某五星好评</h5>
+                    </blockquote>
+                    <div class="bar">
+                        <div class="negative">55% 负面</div>
+                        <span class="text">正面 45%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <page content='<img src="/static/img/section01/comment.jpg" alt="带有负面情绪的五星好评">' title="带有负面情绪的五星好评"></page>
+        
+        <div class="slide light-section">
+            <div class="wrap">
+                <h4>数据计算及可视化</h4>
                 <div class="content">
                     <ul>
                         <li>
-                            <a href="http://www.chinagoldcoin.net" target="_blank" rel="noopener">中国金币</a>
+                            数据库提供聚类、统计、计算
                         </li>
-                        <li>这里是列表示例</li>
-                        <li>这里是列表示例</li>
-                        <li>这里是列表示例</li>
-                        <li>这里是列表示例</li>
-                        <li>这里是列表示例</li>
+                        <li class="bold"><span class="red-text">Tableau</span>做探索性分析</li>
+                        <li class="bold">自主开发的数据处理框架实现可视化(基于百度<span class="red-text">ECharts</span>，部分图表使用阿里<span class="red-text">G2</span>)</li>
                     </ul>
                 </div>
             </div>
@@ -111,8 +144,69 @@
         </div>
     </div>
 </template>
+<style lang="less" scoped>
+    .word-seg {
+        background: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        margin: 0 3px;
+        padding: 3px;
+        border-radius: 2px;
+    }
 
+    .word-red {
+        background: #f66;
+    }
+
+    @bar-height: 50px;
+    @seg-value: 55%;
+    @pad-top: 10px;
+    .bar {
+        height: @bar-height;
+        width: 80%;
+        background: #56f;
+        margin: 30px auto;
+        border-radius: @bar-height/2;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+        display: flex;
+        color: #fff;
+        font-size: 14pt;
+        .text {
+            padding-left: 20px;
+            padding-top: @pad-top;
+        }
+        .negative {
+            width: @seg-value;
+            background: #ff3e3d;
+            border-radius: @bar-height/2 0 0 @bar-height/2;
+            height: 100%;
+            position: relative;
+            text-align: right;
+            padding-top: @pad-top;
+            padding-right: 20px;
+            &:after {
+                content: "";
+                width: 5px;
+                height: @bar-height+10;
+                position: absolute;
+                right: -3px;
+                top: -5px;
+                background: #fff;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+                border-radius: 3px;
+            }
+        }
+    }
+</style>
 <script>
-export default {
-};
+    import page from './simplePage';
+    export default {
+        components: {
+            page
+        },
+        data() {
+            return {
+                wordSeg: ['亚马逊', '平台', '曾经', '的', '统计', '数据', '表示', '，', '具有', '差', '评', '的', '商品', '平均', '转化率', '甚至', '还', '高于', '没有', '评价', '的', '商品', '。', '评价', '作为', '商家', '服务', '的', '表象', '体现', '，', '既', '承载', '了', '用户', '对于', '商品', '和', '服务', '的', '意见', '和', '态度', '，', '更', '承载', '了', '用户', '对', '商品', '和', '服务', '的', '诉求', '。']
+            };
+        }
+    };
 </script>

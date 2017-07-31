@@ -3,7 +3,7 @@
         <!-- <arc-line v-if="fill" :fill="fill"></arc-line> -->
         <div class="wrap">
             <h4>{{title}}</h4>
-            <div v-html="content">
+            <div class="content" v-html="content">
             </div>
         </div>
     </div>
