@@ -36,9 +36,9 @@ let theme = {
     "title": {
         "itemGap": 8,
         "textStyle": {
-            "fontWeight": "bold",
+            "fontWeight": "lighter",
             "color": "#666",
-            "fontSize": 28
+            "fontSize": 35
         },
         "subtextStyle": {
             "color": "#666"
@@ -48,7 +48,7 @@ let theme = {
         "color": ["rgb(38,185,139)", "rgb(38,185,139)", "rgb(38,185,139)", "rgb(38,185,139)"]
     },
     "tooltip": {
-        "trigger": "item"
+        "trigger": "axis"
     },
     "grid": {
         "borderWidth": 0,

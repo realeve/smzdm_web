@@ -97,8 +97,8 @@
         <div class="slide">
             <div class="wrap">
                 <h4>中文分词</h4>
-                <div class="content segment" @click="segWord">
-                    <span v-for="word in wordSeg" :key="word" :class="{word:wordStatus,'red-text':wordStatus && word=='商品'}">{{word}}</span>
+                <div class="content segment" @click="segWord" :class="{word:wordStatus}">
+                    <span v-for="word in wordSeg" :key="word" :class="{'red-text':wordStatus && word=='商品'}">{{word}}</span>
                     <h6>(点击上方文字分词)</h6>
                 </div>
             </div>
@@ -161,7 +161,6 @@
     span {
         background: rgba(0, 0, 0, 0.8);
         color: #fff;
-        padding: 3px;
     }
     .red-text {
         background: #f66;
@@ -171,18 +170,20 @@
 
 .word-margin {
     margin: 0 5px;
+    padding: 3px;
     border-radius: 2px;
 }
 
-.word {
+.word span {
     animation: wordSegment 2s; // animation-direction:alternate;
     .word-margin;
 }
 
 @keyframes wordSegment {
     0% {
-        margin: 0 0px;
-        border-radius: 0px;
+        margin: 0;
+        padding:0;
+        border-radius: 0;
     }
     100% {
         .word-margin;
