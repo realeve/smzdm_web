@@ -9,6 +9,8 @@
 <script>
 import echarts from 'echarts';
 import 'echarts-wordcloud';
+// import 'echarts-gl';
+
 import theme from '../lib/theme';
 import defaultOption from '../lib/defaultOption';
 
