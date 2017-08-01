@@ -1,5 +1,5 @@
 <template>
-    <div class="slide">
+    <div class="slide" :class="{'light-section':fill}">
         <div class="wrap">
             <div ref="chart" class="chart" :style="{height:chartHeight}"></div>
         </div>
@@ -18,6 +18,11 @@ export default {
             type: Object,
             default() {
                 return defaultOption;
+            }
+        },
+        fill: {
+            default() {
+                return false;
             }
         }
     },
@@ -54,6 +59,11 @@ export default {
                     }
                 };
             }
+
+            if(this.fill){
+                this.option.backgroundColor = '#f5f5f5';
+            }
+
             this.option.toolbox = {
                 show: false
             };
@@ -70,7 +80,7 @@ export default {
                     }
                 }
             }
-            
+
             this.option.title[0].top = 0;
             this.chart.setOption(this.option);
         }

@@ -14,6 +14,8 @@ import jdPrice from './jdPrice';
 import jdPriceTop100 from './jdPriceTop100';
 import jdShopNum from './jdShopNum';
 import jdGoodsNum from './jdGoodsNum';
+import shopAge from './shopAge';
+import jdPriceAndSale from './jdPriceAndSale';
 
 export default {
   cbpcSaleNum,
@@ -31,5 +33,7 @@ export default {
   jdPrice,
   jdPriceTop100,
   jdShopNum,
-  jdGoodsNum
+  jdGoodsNum,
+  shopAge,
+  jdPriceAndSale
 }
