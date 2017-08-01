@@ -5,7 +5,7 @@ import goodsUsage from './goodsUsage';
 import giftUsage from './giftUsage';
 import gift2Whom from './gift2Who';
 import giftPrice from './giftPrice';
-import giftMateria from './giftMaterial';
+import giftMaterial from './giftMaterial';
 import scoreNComment from './scoreNComment';
 
 
@@ -19,6 +19,6 @@ export default {
   giftUsage,
   gift2Whom,
   giftPrice,
-  giftMateria,
+  giftMaterial,
   scoreNComment,
 }

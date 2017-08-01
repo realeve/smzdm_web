@@ -1,4 +1,4 @@
-# smzdm_web
+# smzdm_pwa
 
 > A Vue.js project
 
