@@ -163,13 +163,12 @@
     span {
         background: rgba(0, 0, 0, 0.8);
         color: #fff;
-        transition: 1s margin,1s padding,0s 1s background;
+        transition: 1s margin,0s 1s background;
         transition-timing-function: linear;
     }
     &:hover {
         span {
             margin: 0 5px;
-            padding: 3px;
             border-radius: 2px;
         }
         .red-text{
