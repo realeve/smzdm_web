@@ -1,9 +1,9 @@
-@font-face {
+/* @font-face {
     font-family: 'dengxian';
     src: url('../fonts/font.ttf');
     font-style: normal;
     font-weight: normal;
-}
+} */
 
 * {
     -moz-box-sizing: border-box;
@@ -82,7 +82,8 @@ video {
 
 body,
 html {
-    font: 300 1em/1.65 'dengxian', 'PingFang SC', 'Helvetica Neue', 'Helvetica', 'Microsoft Yahei', 'HanHei SC', 'Arial';
+    /* 'dengxian' */
+    font: 300 1em/1.65 '等线','PingFang SC','Helvetica Neue','Helvetica','Arial','Hiragino Sans GB','Microsoft Yahei','STHeiti';
     height: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

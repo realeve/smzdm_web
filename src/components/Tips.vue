@@ -20,7 +20,7 @@ export default {
   },
   computed: {
     playAudio() {
-      return   process.env.NODE_ENV !== 'production';
+      return  true; // process.env.NODE_ENV !== 'production';
     },
     tips: {
       get() {
