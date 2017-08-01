@@ -97,9 +97,10 @@
         <div class="slide">
             <div class="wrap">
                 <h4>中文分词</h4>
-                <div class="content segment" @click="segWord" :class="{word:wordStatus}">
-                    <span v-for="word in wordSeg" :key="word" :class="{'red-text':wordStatus && word=='商品'}">{{word}}</span>
-                    <h6>(点击上方文字分词)</h6>
+                <!-- @click="segWord" :class="{word:wordStatus}" -->
+                <div class="content segment">
+                    <span v-for="word in wordSeg" :key="word" :class="{'red-text':word=='商品'}">{{word}}</span>
+                    <h6>(鼠标移至上方文字分词)</h6>
                 </div>
             </div>
         </div>
@@ -157,38 +158,42 @@
     </div>
 </template>
 <style lang="less" scoped>
+
 .segment {
     span {
         background: rgba(0, 0, 0, 0.8);
         color: #fff;
+        transition: 1s margin,1s padding,0s 1s background;
+        transition-timing-function: linear;
     }
-    .red-text {
-        background: #f66;
-        color: #fff;
+    &:hover {
+        span {
+            margin: 0 5px;
+            padding: 3px;
+            border-radius: 2px;
+        }
+        .red-text{
+            background: #f66;
+        }
     }
 }
 
-.word-margin {
-    margin: 0 5px;
-    padding: 3px;
-    border-radius: 2px;
-}
 
-.word span {
-    animation: wordSegment 2s; // animation-direction:alternate;
-    .word-margin;
-}
+// .word span {
+//     animation: wordSegment 2s; // animation-direction:alternate;
+//     .word-margin;
+// }
 
-@keyframes wordSegment {
-    0% {
-        margin: 0;
-        padding:0;
-        border-radius: 0;
-    }
-    100% {
-        .word-margin;
-    }
-}
+// @keyframes wordSegment {
+//     0% {
+//         margin: 0;
+//         padding: 0;
+//         border-radius: 0;
+//     }
+//     100% {
+//         .word-margin;
+//     }
+// }
 
 @bar-height: 50px;
 @seg-value: 55%;
@@ -242,10 +247,10 @@ export default {
             wordSeg: ['亚马逊', '平台', '曾经', '的', '统计', '数据', '表示', '，', '具有', '差', '评', '的', '商品', '平均', '转化率', '甚至', '还', '高于', '没有', '评价', '的', '商品', '。', '评价', '作为', '商家', '服务', '的', '表象', '体现', '，', '既', '承载', '了', '用户', '对于', '商品', '和', '服务', '的', '意见', '和', '态度', '，', '更', '承载', '了', '用户', '对', '商品', '和', '服务', '的', '诉求', '。']
         };
     },
-    methods: {
-        segWord() {
-            this.wordStatus = !this.wordStatus;
-        }
-    }
+    // methods: {
+    //     segWord() {
+    //         this.wordStatus = !this.wordStatus;
+    //     }
+    // }
 };
 </script>

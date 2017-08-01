@@ -54,20 +54,23 @@ export default {
                     }
                 };
             }
+            this.option.toolbox = {
+                show: false
+            };
 
-            this.option = Object.assign(this.option, {
-                toolbox: {
-                    show: false
-                },
-                tooltip: {
-                    axisPointer: {
-                        type: 'cross',
-                        lineStyle: {
-                            type: 'dashed'
-                        }
+            if (Reflect.has(this.option, 'tooltip')) {
+                if (Reflect.has(this.option.tooltip, 'axisPointer')) {
+                    if (this.option.tooltip.axisPointer.type == 'line') {
+                        this.option.tooltip.axisPointer = {
+                            type: 'cross',
+                            lineStyle: {
+                                type: 'dashed'
+                            }
+                        };
                     }
                 }
-            });
+            }
+            
             this.option.title[0].top = 0;
             this.chart.setOption(this.option);
         }
