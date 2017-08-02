@@ -20,7 +20,7 @@ export default {
   },
   computed: {
     playAudio() {
-      return  true; // process.env.NODE_ENV !== 'production';
+      return process.env.NODE_ENV !== 'mobile';
     },
     tips: {
       get() {
