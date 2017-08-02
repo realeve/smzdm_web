@@ -13,7 +13,7 @@
                     <small>技术质量部 李宾</small>
                     <small>企管规划部 倪震</small>
                 </div>
-                <div class="footer">
+                <div class="footer" v-if="showFooter">
                     <small>
                         <a href="http://www.miitbeian.gov.cn/" rel="noreferrer" target="_blank">蜀ICP备17016569号</a>
                     </small>
@@ -29,7 +29,8 @@ export default {
     name: 'main',
     data(){
         return{
-            mobile:process.env.NODE_ENV != 'mobile'
+            mobile:process.env.NODE_ENV != 'mobile',
+            showFooter:process.env.NODE_ENV!='development'
         }
     }
 };

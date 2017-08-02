@@ -7,9 +7,11 @@ import gift2Whom from './gift2Who';
 import giftPrice from './giftPrice';
 import giftMaterial from './giftMaterial';
 // import scoreNComment from './scoreNComment';
-
-
-
+import scoreNSale from './scoreNSale';
+import negWordcloud from './negWordcloud';
+import wordCloudObj from './wordCloud_obj';
+import wordCloudN from './wordCloud_n';
+import wordCloudV from './wordCloud_v';
 
 export default {
   jdComment,
@@ -21,4 +23,9 @@ export default {
   giftPrice,
   giftMaterial,
   // scoreNComment,
+  scoreNSale,
+  negWordcloud,
+  wordCloudObj,
+  wordCloudN,
+  wordCloudV,
 }

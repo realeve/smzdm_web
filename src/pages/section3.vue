@@ -58,8 +58,13 @@
         </div>
         <!-- <v-chart :option="option.scoreNComment"></v-chart> -->
         <v-page content='<img src="/static/img/section03/scorencomment.jpg" alt="用户评论与评分">'></v-page>
-        <v-page fill="true" title="订单数与用户情感得分" content="随着销量的增加，用户情绪趋正面，得分在0.8以上，<strong>用户对销量较少的产品有大量负面情绪</strong>"></v-page>
-        
+        <v-page fill="true" title="订单数与用户情感得分" content="随着销量的增加，用户情绪趋正面，得分在0.8以上，<strong>用户对销量较少的产品有大量负面情绪</strong>，在后期的运营过程中需注意该部分评论内容。"></v-page>
+        <v-chart :option="option.scoreNSale"></v-chart>
+        <v-page title="负面情绪得分分析" content="将情绪分析得分在0.3分以下的评论分词统计。从分词统计结果来看，用户不满意的点主要集中在品质和服务方面。"></v-page>
+        <v-chart :option="option.wordCloudObj"></v-chart>
+        <v-page title="用户对图片的负面情绪" content='<img src="/static/img/section03/obj.jpg" alt="小">'></v-page>
+        <v-chart :option="option.wordCloudN"></v-chart>
+        <v-page title="用户对真伪的负面情绪" content='<img src="/static/img/section03/n.jpg" alt="不知道">'></v-page>
 
     </div>
 </template>
