@@ -1,7 +1,7 @@
 <template>
   <ul id="nav">
-    <li data-menuanchor="1stPage" class="active">
-      <a href="#1stPage">背景</a>
+    <li data-menuanchor="prePage" class="active">
+      <a href="#prePage">背景</a>
     </li>
     <li data-menuanchor="2ndPage">
       <a href="#2ndPage">市场综述</a>

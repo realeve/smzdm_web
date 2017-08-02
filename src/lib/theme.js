@@ -32,7 +32,9 @@ let theme = {
         "#eaccc2",
         "#ffaa74"
     ],
-    "animationDuration": 1500,
+    // "animationDuration": 1500,
+    // animation:false,
+    animationThreshold:100,
     "title": {
         "itemGap": 8,
         "textStyle": {
@@ -61,7 +63,7 @@ let theme = {
                 "width": 2
             }
         },
-        "boundaryGap": true,
+        "boundaryGap": 0,
         "splitLine": {
             "show": false,
             "lineStyle": {

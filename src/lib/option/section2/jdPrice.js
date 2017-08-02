@@ -377,7 +377,7 @@ var option = {
                 "show": false
             },
             "type": "value",
-            "boundaryGap": true
+            "boundaryGap": 0
         }
     ],
     "yAxis": [

@@ -74,8 +74,8 @@ export default {
   methods: {
     getAnchors() {
       let pages = {
-        data: [3, 1, 1, 2, 1],
-        desc: ['1stPage', '2ndPage', '3rdPage', '4thPage', 'lastPage']
+        data: [1, 1, 1, 1, 1, 1, 1,2],
+        desc: ['home', 'prePage', '1stPage', '2ndPage', '3rdPage', '4thPage','5thPage', 'lastPage']
       };
       let anchors = [];
       pages.data.map(function (val, idx) {

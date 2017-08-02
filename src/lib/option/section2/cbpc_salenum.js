@@ -244,7 +244,7 @@ var option = {
                 "show": false
             },
             "type": "category",
-            "boundaryGap": true,
+            "boundaryGap": 0,
             "data": xData
         }
     ],

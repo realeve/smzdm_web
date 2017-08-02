@@ -175,7 +175,7 @@ export default {
                 "show": false
             },
             "type": "category",
-            "boundaryGap": true,
+            "boundaryGap": 0,
             data: [
                 '深圳',
                 '北京',

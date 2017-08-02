@@ -178,7 +178,7 @@ export default  {
                 "show": false
             },
             "type": "category",
-            "boundaryGap": true,
+            "boundaryGap": 0,
             "data": ["17-05", "17-06", "17-07"]
         }],
         "yAxis": [{

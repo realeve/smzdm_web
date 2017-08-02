@@ -195,7 +195,7 @@
                 "show": false
             },
             "type": "category",
-            "boundaryGap": false,
+            "boundaryGap": 0,
             "data": axisData
         }],
         "yAxis": [{

@@ -19537,8 +19537,8 @@
             "x": "right",
             "y2": 3
         }],
-        animationDurationUpdate: 1500,
-        animationEasingUpdate: 'quinticInOut',
+        // animationDurationUpdate: 1500,
+        // animationEasingUpdate: 'quinticInOut',
         series: [{
             type: 'graph', // graphGL
             // layout:'forceAtlas2',

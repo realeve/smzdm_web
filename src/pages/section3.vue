@@ -57,7 +57,7 @@
             </div>
         </div>
         <!-- <v-chart :option="option.scoreNComment"></v-chart> -->
-        <v-page content='<img src="/static/img/section03/scorencomment.png" alt="用户评论与评分">' title="用户评论与评分"></v-page>
+        <v-page content='<img src="/static/img/section03/scorencomment.jpg" alt="用户评论与评分">'></v-page>
         <v-page fill="true" title="订单数与用户情感得分" content="随着销量的增加，用户情绪趋正面，得分在0.8以上，<strong>用户对销量较少的产品有大量负面情绪</strong>"></v-page>
         
 
