@@ -12,6 +12,9 @@ import negWordcloud from './negWordcloud';
 import wordCloudObj from './wordCloud_obj';
 import wordCloudN from './wordCloud_n';
 import wordCloudV from './wordCloud_v';
+import userScore from './userScore';
+import userSA from './userSA';
+import mapChina from './mapChina';
 
 export default {
   jdComment,
@@ -21,11 +24,14 @@ export default {
   giftUsage,
   gift2Whom,
   giftPrice,
-  giftMaterial,
+  giftMaterial,  
   // scoreNComment,
+  userScore,
+  userSA,
   scoreNSale,
   negWordcloud,
   wordCloudObj,
   wordCloudN,
   wordCloudV,
+  mapChina
 }

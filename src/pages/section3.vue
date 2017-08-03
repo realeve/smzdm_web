@@ -56,8 +56,9 @@
                 </ol></div>
             </div>
         </div>
-        <!-- <v-chart :option="option.scoreNComment"></v-chart> -->
-        <v-page content='<img src="/static/img/section03/scorencomment.jpg" alt="用户评论与评分">'></v-page>
+        <v-chart :option="option.userScore"></v-chart>
+        <v-chart :option="option.userSA"></v-chart>
+        <!--v-page content='<img src="/static/img/section03/scorencomment.jpg" alt="用户评论与评分">'></v-page-->
         <v-page fill="true" title="订单数与用户情感得分" content="随着销量的增加，用户情绪趋正面，得分在0.8以上，<strong>用户对销量较少的产品有大量负面情绪</strong>，在后期的运营过程中需注意该部分评论内容。"></v-page>
         <v-chart :option="option.scoreNSale"></v-chart>
         <v-page title="负面情绪得分分析" content="将情绪分析得分在0.3分以下的评论分词统计。从分词统计结果来看，用户不满意的点主要集中在品质和服务方面。"></v-page>
@@ -66,20 +67,43 @@
         <v-chart :option="option.wordCloudN"></v-chart>
         <v-page title="用户对真伪的负面情绪" content='<img src="/static/img/section03/n.jpg" alt="不知道">'></v-page>
 
+        <div class="slide">
+            <div class="wrap"><div class="content">
+                <blockquote>由于本文是针对京东贵金属贵类的所有商品分析，对于长期的销售运营来讲，可通过充分利用爬虫、分词、语义分析针对指定商户（自家店铺及友商）的所有产品进行分析，进而实现<strong>智能客服或舆情分析预警</strong>，另外还可以通过用户评论为新品开发及升级提供参考。</blockquote>
+            </div></div>
+        </div>
+
+        <div class="slide light-section">
+            <div class="wrap">
+                <h4>用户画像</h4>
+                <div class="content">
+                    <blockquote>
+                        搜索指数:以搜索引擎海量网民行为数据为基础的数据分享平台，它能提示某关键字的搜索规模、涨跌态势、新闻舆论等。
+                    </blockquote>
+                        <p>接下来将以"中国金币"作为关键词引用<strong>百度指数</strong>的数据来还原贵金属制品的人群画像</p>
+                </div>
+            </div>
+        </div>
+        <v-page title="整体趋势" content='<img src="/static/img/section03/searchIdx.jpg" alt="搜索指数">'></v-page>
+        <v-page title="需求图谱" content='<img src="/static/img/section03/needMap.jpg" alt="需求图谱">'></v-page>
+        <v-page title="人群画像" content='<img src="/static/img/section03/userMap.jpg" alt="人群画像">'></v-page>
+        <v-page title="年龄与性别分布" content='<img src="/static/img/section03/user.jpg" alt="年龄分布">'></v-page>
+        <v-chart :fill="'#404a59'" :option="option.mapChina"></v-chart>
+
     </div>
 </template>
 
 <script>
-import VPage from './VPage';
-import option from '../lib/option/section3';
-export default {
-    components: {
-        VPage
-    },
-    data() {
-        return {
-            option
-        }
-    },
-};
+    import VPage from './VPage';
+    import option from '../lib/option/section3';
+    export default {
+        components: {
+            VPage
+        },
+        data() {
+            return {
+                option
+            }
+        },
+    };
 </script>
