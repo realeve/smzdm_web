@@ -3,6 +3,9 @@
         <div class="slide dark-section">
             <div class="wrap">
                 <h4>3.用户分析</h4>
+                <div class="content">
+                    评论分析、情感分析、用户画像
+                </div>
             </div>
         </div>
         <div class="slide">
@@ -88,7 +91,7 @@
         <v-page title="需求图谱" content='<img src="/static/img/section03/needMap.jpg" alt="需求图谱">'></v-page>
         <v-page title="人群画像" content='<img src="/static/img/section03/userMap.jpg" alt="人群画像">'></v-page>
         <v-page title="年龄与性别分布" content='<img src="/static/img/section03/user.jpg" alt="年龄分布">'></v-page>
-        <v-chart :fill="'#404a59'" :option="option.mapChina"></v-chart>
+        <v-chart :fill="'#404a59'" :option="option.mapChina" :arc="'#c0392b'"></v-chart>
 
     </div>
 </template>

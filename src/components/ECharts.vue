@@ -3,6 +3,7 @@
         <div class="wrap">
             <div ref="chart" class="chart" :style="{height:chartHeight}"></div>
         </div>
+        <arc-line v-if="arc" :fill="arc"></arc-line>
     </div>
 </template>
 
@@ -25,6 +26,11 @@
             },
             fill: {
                 default () {
+                    return false;
+                }
+            },
+            arc:{
+                default (){
                     return false;
                 }
             }
