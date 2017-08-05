@@ -69,13 +69,21 @@ export default {
       set(val) {
         this.$store.commit('setTips', val);
       }
+    },
+    terminal: {
+      get() {
+        return this.$store.state.terminalStatus;
+      },
+      set(val) {
+        this.$store.commit('setTerminalStatus', val);
+      }
     }
   },
   methods: {
     getAnchors() {
       let pages = {
-        data: [1, 1, 1, 1, 1, 1, 1,2],
-        desc: ['home', 'prePage', '1stPage', '2ndPage', '3rdPage', '4thPage','5thPage', 'lastPage']
+        data: [1, 1, 1, 1, 1, 1, 1, 2],
+        desc: ['home', 'prePage', '1stPage', '2ndPage', '3rdPage', '4thPage', '5thPage', 'lastPage']
       };
       let anchors = [];
       pages.data.map(function (val, idx) {
@@ -99,13 +107,19 @@ export default {
         menu: '#nav',
         easing: 'easeInOutCubic',
         loopHorizontal: false,
-        afterLoad: (anchorLink, index) => {
+        afterLoad: (anchorLink, index, a, b) => {
           if (index == 2 && !this.typeStatus) {
             this.typeStatus = true;
+          } else if (1) {
+
           }
           this.setCurIdx(index, 0);
         },
         afterSlideLoad: (anchorLink, index, slideAnchor, slideIndex) => {
+
+          if (index == 3) {
+            this.terminal = slideIndex == 5 ? true : false;
+          }
           this.setCurIdx(index, slideAnchor);
         }
       };

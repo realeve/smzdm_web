@@ -81,11 +81,16 @@
                 </div>
             </div>
         </div>
-        <div v-if="mobile" class="slide light-section">
-            <video loop muted autoplay data-autoplay>
-                <source src="/static/video/web_crawler_sample01.mp4" type="video/mp4">
-            </video>
+        <div class="slide">
+            <div class="wrap">
+                <terminal></terminal>
+            </div>
         </div>
+        <!-- <div v-if="mobile" class="slide light-section">
+             <video loop muted autoplay data-autoplay>
+                <source src="/static/video/web_crawler_sample01.mp4" type="video/mp4">
+            </video> 
+        </div> -->
         <div v-if="mobile" class="slide light-section">
             <video loop muted autoplay data-autoplay>
                 <source src="/static/video/web_crawler_sample02.mp4" type="video/mp4">
@@ -177,23 +182,6 @@
     }
 }
 
-
-// .word span {
-//     animation: wordSegment 2s; // animation-direction:alternate;
-//     .word-margin;
-// }
-
-// @keyframes wordSegment {
-//     0% {
-//         margin: 0;
-//         padding: 0;
-//         border-radius: 0;
-//     }
-//     100% {
-//         .word-margin;
-//     }
-// }
-
 @bar-height: 50px;
 @seg-value: 55%;
 @pad-top: 10px;
@@ -236,9 +224,12 @@
 </style>
 <script>
 import VPage from './VPage';
+import Terminal from '../components/Terminal';
+
 export default {
     components: {
-        VPage
+        VPage,
+        Terminal
     },
     data() {
         return {
@@ -246,11 +237,6 @@ export default {
             wordStatus: false,
             wordSeg: ['亚马逊', '平台', '曾经', '的', '统计', '数据', '表示', '，', '具有', '差', '评', '的', '商品', '平均', '转化率', '甚至', '还', '高于', '没有', '评价', '的', '商品', '。', '评价', '作为', '商家', '服务', '的', '表象', '体现', '，', '既', '承载', '了', '用户', '对于', '商品', '和', '服务', '的', '意见', '和', '态度', '，', '更', '承载', '了', '用户', '对', '商品', '和', '服务', '的', '诉求', '。']
         };
-    },
-    // methods: {
-    //     segWord() {
-    //         this.wordStatus = !this.wordStatus;
-    //     }
-    // }
+    }
 };
 </script>

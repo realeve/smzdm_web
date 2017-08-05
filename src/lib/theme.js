@@ -32,8 +32,7 @@ let theme = {
         "#eaccc2",
         "#ffaa74"
     ],
-    // "animationDuration": 1500,
-    // animation:false,
+    "animationDuration": 1500,
     animationThreshold:100,
     "title": {
         "itemGap": 8,

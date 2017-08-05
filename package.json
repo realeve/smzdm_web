@@ -11,10 +11,13 @@
     "mobile": "node build/mobile.js"
   },
   "dependencies": {
+    "clipboard": "^1.7.1",
     "echarts": "^3.6.2",
     "echarts-gl": "^1.0.0-beta.4",
     "echarts-wordcloud": "^1.1.0",
     "fullpage.js": "^2.9.4",
+    "prism": "^4.1.2",
+    "prismjs": "^1.6.0",
     "typed.js": "^2.0.5",
     "vue": "^2.3.3",
     "vue-router": "^2.6.0",

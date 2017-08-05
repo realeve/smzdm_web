@@ -9,6 +9,9 @@ let mutations = {
     },
     setTips(state,val){
         state.tips = val;
+    },
+    setTerminalStatus(state,val){
+        state.terminalStatus = val;
     }
 }
 

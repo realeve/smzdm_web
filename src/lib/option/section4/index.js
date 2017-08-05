@@ -21,6 +21,12 @@ import stockNum from './stockNum';
 import stockMoney from './stockMoney';
 import stockPercent from './stockPercent';
 
+import cncoinGoods from './cncoinGoodsNum';
+import shangbiGoods from './shangbiGoods';
+
+import cncoinSales from './cncoinSales';
+import shangbiSales from './shangbiSales';
+
 export default{
   wfxPrice,
   wfxPrice2,
@@ -40,4 +46,9 @@ export default{
   stockNum,
   stockMoney,
   stockPercent,
+  cncoinGoods,
+  shangbiGoods,
+  cncoinSales,
+  shangbiSales,
+  
 }
