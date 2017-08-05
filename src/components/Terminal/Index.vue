@@ -196,6 +196,7 @@ export default {
     flex-direction: column;
     width: 90%;
     box-shadow: none;
+    font-size: 14pt;
 }
 
 .terminal-title-bar {
