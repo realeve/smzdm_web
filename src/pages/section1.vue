@@ -91,11 +91,11 @@
                 <source src="/static/video/web_crawler_sample01.mp4" type="video/mp4">
             </video> 
         </div> -->
-        <div v-if="mobile" class="slide light-section">
+        <!-- <div v-if="mobile" class="slide light-section">
             <video loop muted autoplay data-autoplay>
                 <source src="/static/video/web_crawler_sample02.mp4" type="video/mp4">
             </video>
-        </div>
+        </div> -->
     
         <v-page title="异常情况自动发送邮件" content='<img src="/static/img/section01/mail.jpg" alt="爬虫错误提示">' />
     

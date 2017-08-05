@@ -133,7 +133,7 @@ export default {
                     componentPrev: this.step2,
                     componentNext: this.step3
                 });
-                return this.sleep(600);
+                return this.sleep(2000);
             }).then(() => {
                 this.step3.showCursor = false;
                 this.initScrab();
@@ -189,12 +189,13 @@ export default {
 }
 
 .terminal {
-    border-radius: 3px;
-    padding: 30px;
+    border:none;
+    border-radius: 0;
+    padding: none;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    width: 90%;
+    width: 100%;
     box-shadow: none;
     font-size: 14pt;
 }
