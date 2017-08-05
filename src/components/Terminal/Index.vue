@@ -135,6 +135,7 @@ export default {
                 });
                 return this.sleep(2000);
             }).then(() => {
+                this.step2.showCursor = false;
                 this.step3.showCursor = false;
                 this.initScrab();
             });
@@ -162,8 +163,7 @@ export default {
                     let item = jsonList[i];
                     await that.sleep(time);
                     that.step3.htmlList.push(`<br>【中国金币】:正在采集 第${i + 1}/${1 + jsonList.length}条 数据`);
-                    that.step3.htmlList.push(that.getJSONstr(item))
-                    that.step3.htmlList.push(item);
+                    that.step3.htmlList.push(that.getJSONstr(item));
                     that.step3.htmlList.push(`系统提示：写入数据库成功,${time}毫秒后继续采集数据。`);
                     that.$refs.terminal.scrollIntoView(false);
                 }
@@ -186,6 +186,7 @@ export default {
 
 .terminal-body {
     flex: 1;
+    background-color:#263238;
 }
 
 .terminal {
@@ -204,7 +205,7 @@ export default {
     padding: 8px;
     text-align: left;
     background-color: #4c4a48;
-    box-shadow: inset rgba(255, 255, 255, 0.7) 0px 1px 1px;
+    box-shadow: none;//inset rgba(255, 255, 255, 0.7) 0px 1px 1px;
     background-image: none;
     border-bottom: none;
     color: #fff;
