@@ -1,6 +1,6 @@
 <template>
     <div class="section">
-        <div class="content">
+        <div class="content" @click="initCanvas">
             <div class="container">
                 <p>感谢聆听</p>
             </div>
@@ -122,7 +122,7 @@ export default {
                 twoPi = 2 * Math.PI,
                 cos = Math.cos,
                 random = Math.random;
-            canvas.width = w * pr, canvas.height = h * pr, ctx.scale(pr, pr), ctx.globalAlpha = .08;
+            canvas.width = w * pr, canvas.height = h * pr, ctx.scale(pr, pr), ctx.globalAlpha = .2;
             var verticals = [],
                 verticals_side = [],
                 fillStyles = [],
@@ -131,7 +131,9 @@ export default {
         }
     },
     mounted() {
-        this.initCanvas2();
+        this.initCanvas();
+        // this.initCanvas2(); 
+        // 由于echarts占用内存过多，不使用该动态版本
     }
 };
 </script>
