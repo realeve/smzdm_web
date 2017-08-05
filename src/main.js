@@ -14,6 +14,9 @@ Vue.component('arc-line', ArcLine);
 import VChart from './components/ECharts';
 Vue.component('v-chart',VChart);
 
+import VPage from './pages/VPage';
+Vue.component('v-page',VPage);
+
 new Vue({
   el: '#app',
   // router,

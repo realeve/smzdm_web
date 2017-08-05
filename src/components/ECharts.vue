@@ -111,8 +111,11 @@ export default {
                     }
                 }
             }
-
-            this.option.title[0].top = 0;
+            if(typeof this.option.title == 'object'){
+                this.option.title.top = 0;
+            }else{
+                this.option.title[0].top = 0;
+            }
             this.chart.setOption(this.option);
         }
     }

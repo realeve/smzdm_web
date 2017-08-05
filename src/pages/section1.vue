@@ -223,12 +223,10 @@
 }
 </style>
 <script>
-import VPage from './VPage';
 import Terminal from '../components/Terminal';
 
 export default {
     components: {
-        VPage,
         Terminal
     },
     data() {

@@ -26,8 +26,10 @@ import shangbiGoods from './shangbiGoods';
 
 import cncoinSales from './cncoinSales';
 import shangbiSales from './shangbiSales';
+import cncoinWeekday from './cncoinWeekday';
+import cncoinWnT from './cncoinWnT';
 
-export default{
+export default {
   wfxPrice,
   wfxPrice2,
   youzan,
@@ -50,5 +52,6 @@ export default{
   shangbiGoods,
   cncoinSales,
   shangbiSales,
-  
+  cncoinWeekday,
+  cncoinWnT
 }

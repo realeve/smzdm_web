@@ -160,15 +160,41 @@
     
         <v-chart :option="option.shangbiSales" content='<small class="underline">上币在无新品上架的时间内销量较低</small>'></v-chart>
     
+        <v-chart fill="true" :option="option.cncoinWeekday" content='<small class="underline">中国金币在周末几乎不上新产品，可能与国企放假休息有关？</small>'></v-chart>
+    
+        <v-page title="产品销售规律" content="本部分以中国金币为例探索商品可能在<strong>不同时间、不同月份</strong>内可能存在的规律"></v-page>
+    
+        <div class="slide light-section">
+            <div class="wrap">
+                <blockquote>
+                    中国金币主要销量在11、12及次年1月，占销售总额一半。
+                </blockquote>
+                <div class="content">
+                    <ali-chart></ali-chart>
+                </div>
+            </div>
+        </div>
+
+        <v-chart :option="option.cncoinWnT" content="<blockquote>注:中国金币与上币数据比例为50:1,为方便说明，此处将上币散点数据大小放大50倍。</blockquote>"></v-chart>
+        <div class="slide">
+            <div class="wrap">
+                <h4>中国金币系统建设情况分析</h4>
+                <div class="content">
+                    <img src="/static/img/section04/order-num.png" alt="每分钟订单数">
+                </div>
+            </div>
+            <arc-line :fill="'#4fc08d'"></arc-line>
+        </div>
     </div>
 </template>
 
 <script>
-import VPage from './VPage';
 import option from '../lib/option/section4';
+import AliChart from '../components/G2Chart';
+
 export default {
     components: {
-        VPage
+        AliChart
     },
     data() {
         return {

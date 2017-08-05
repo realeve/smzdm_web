@@ -162,7 +162,7 @@ export default {
                     let time = Math.ceil(Math.random() * 1000 + 300);
                     let item = jsonList[i];
                     await that.sleep(time);
-                    that.step3.htmlList.push(`<br>【中国金币】:正在采集 第${i + 1}/${1 + jsonList.length}条 数据`);
+                    that.step3.htmlList.push(`<br>【中国金币】:正在采集 第${i + 1}/${jsonList.length}条 数据`);
                     that.step3.htmlList.push(that.getJSONstr(item));
                     that.step3.htmlList.push(`系统提示：写入数据库成功,${time}毫秒后继续采集数据。`);
                     that.$refs.terminal.scrollIntoView(false);

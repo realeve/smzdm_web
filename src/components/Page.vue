@@ -8,7 +8,7 @@
     <section4/>
     <section5/>
     <section6/>
-    <v-page isSection="true" title="敬请指正" />
+    <thanks/>
   </div>
 </template>
 
@@ -18,7 +18,6 @@ import 'fullpage.js';
 
 import MainPage from '../pages/main';
 import Preface from '../pages/preface';
-import VPage from '../pages/VPage';
 
 import section1 from '../pages/section1';
 import section2 from '../pages/section2';
@@ -26,6 +25,8 @@ import section3 from '../pages/section3';
 import section4 from '../pages/section4';
 import section5 from '../pages/section5';
 import section6 from '../pages/section6';
+
+import Thanks from '../components/Thanks';
 
 export default {
   name: 'page',
@@ -38,7 +39,7 @@ export default {
     section4,
     section5,
     section6,
-    VPage
+    Thanks
   },
   computed: {
     el() {

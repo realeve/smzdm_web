@@ -97,12 +97,8 @@
 </template>
 
 <script>
-    import VPage from './VPage';
     import option from '../lib/option/section3';
     export default {
-        components: {
-            VPage
-        },
         data() {
             return {
                 option
