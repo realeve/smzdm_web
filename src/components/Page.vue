@@ -55,14 +55,14 @@ export default {
       }
     },
     // 第二页打字效果初始化
-    typeStatus: {
-      get() {
-        return this.$store.state.typeStatus;
-      },
-      set(val) {
-        this.$store.commit('initTyped', val);
-      }
-    },
+    // typeStatus: {
+    //   get() {
+    //     return this.$store.state.typeStatus;
+    //   },
+    //   set(val) {
+    //     this.$store.commit('initTyped', val);
+    //   }
+    // },
     tips: {
       get() {
         return this.$store.state.tips;
@@ -108,12 +108,10 @@ export default {
         menu: '#nav',
         easing: 'easeInOutCubic',
         loopHorizontal: false,
-        afterLoad: (anchorLink, index, a, b) => {
-          if (index == 2 && !this.typeStatus) {
-            this.typeStatus = true;
-          } else if (1) {
-
-          }
+        afterLoad: (anchorLink, index) => {
+          // if (index == 2 && !this.typeStatus) {
+          //   this.typeStatus = true;
+          // }
           this.setCurIdx(index, 0);
         },
         afterSlideLoad: (anchorLink, index, slideAnchor, slideIndex) => {

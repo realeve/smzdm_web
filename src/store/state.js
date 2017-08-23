@@ -1,6 +1,6 @@
 const state = {
     inited:false,
-    typeStatus:false,
+    // typeStatus:false,
     terminalStatus:false,
     tips:''
 }

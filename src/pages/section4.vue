@@ -8,21 +8,10 @@
                 </div>
             </div>
         </div>
-        <div class="slide">
-            <div class="wrap">
-                <h4>价格变动商品的提取</h4>
-                <div class="content">
-                    <ol>
-                        <li>对商品按照ID聚类统计出
-                            <strong>含有多个价格的商品</strong>，只有单个价格的商品视为价格未变动。</li>
-                        <li>对有价格变化的商品做筛选，得出价格变动情况。</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
+        
         <v-chart :fill="'#262e3a'" :option="option.goldPrice"></v-chart>
         <v-chart fill="true" :option="option.wfxPrice"></v-chart>
-        <v-chart :option="option.wfxPrice2"></v-chart>
+        
         <div class="slide light-section">
             <div class="wrap">
                 <h4>沈币定价规律</h4>
@@ -54,13 +43,12 @@
             </div>
         </div>
         <v-chart :option="option.youzan" fill="true"></v-chart>
-        <v-chart :option="option.youzan2"></v-chart>
-        <v-chart :option="option.shangbi" fill="true"></v-chart>
+                
         <v-page title="中钞贵金属" content="中钞贵金属74件商品中共17件产品有价格变化，除手串外，其余全为<strong>投资类</strong>商品"></v-page>
     
         <v-chart :option="option.ccgold" fill="true"></v-chart>
         <v-chart :option="option.ccgold2"></v-chart>
-        <v-chart :option="option.ccgold3" fill="true"></v-chart>
+        
         <v-chart :option="option.ccgold4"></v-chart>
     
         <div class="slide">
@@ -93,35 +81,23 @@
                 </div>
             </div>
         </div>
-        <v-chart :option="option.ctf" fill="true"></v-chart>
-        <v-chart :option="option.ctf2"></v-chart>
-        <v-chart :option="option.ctf3" fill="true"></v-chart>
+        
+        <v-chart :option="option.ctf2" fill="true"></v-chart>
     
-        <div class="slide">
-            <div class="wrap">
-                <h4>京东</h4>
-                <div class="content">
-                    <p>京东商品数较多，我们仅在前期对
-                        <strong>TOP40</strong>的商家作持续价格变动观测，根据每天各店铺商品调价比例，我们选取了在40%以上的店铺对比分析(其中赛菲尔及老庙未显示用户评价得分)</p>
-                    <p>据经验分析，大多数店铺均采用
-                        <strong>每日浮动金价乘以克重</strong>的模式，首饰类产品增加一定手续费，因篇幅有限，该部分不对各商家单克黄金溢价做过多分析。</p>
-                </div>
-            </div>
-        </div>
+        <v-chart :option="option.ctf3" fill="true"></v-chart>
         <div class="slide light-section">
             <div class="wrap">
                 <h4>商品库存</h4>
                 <div class="content">
                     <p>本次分析我们采集了中钞贵金属、沈币、上币、中国金币总公司的库存信息，天猫和京东不显示当前库存量故未采集。</p>
-                    <p>在所采集的数据中，中国金币未直接当前库存数，我们通过
-                        <p>模拟向购物车添加指定数量的商品</p>探知中国金币的库存信息。为降低对中国金币的服务器压力以及提高效率，对此专门设计了算法。</p>
+                    <p>在所采集的数据中，中国金币未直接当前库存数，我们通过模拟向购物车添加指定数量的商品探知中国金币的库存信息。为降低对中国金币的服务器压力以及提高效率，对此专门设计了算法。</p>
                 </div>
             </div>
         </div>
-        <v-chart :option="option.stockNum"></v-chart>
+        
         <v-chart fill="true" :option="option.stockMoney"></v-chart>
         <v-chart :option="option.stockPercent"></v-chart>
-        <div class="slide light-section">
+        <!-- <div class="slide light-section">
             <div class="wrap">
                 <h4>库存占用情况</h4>
                 <div class="content">
@@ -141,7 +117,7 @@
     
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="slide">
             <div class="wrap">
                 <h4>商品上新</h4>
@@ -160,8 +136,6 @@
     
         <v-chart :option="option.shangbiSales" content='<small class="underline">上币在无新品上架的时间内销量较低</small>'></v-chart>
     
-        <v-chart fill="true" :option="option.cncoinWeekday" content='<small class="underline">中国金币在周末几乎不上新产品，可能与国企放假休息有关？</small>'></v-chart>
-    
         <v-page title="产品销售规律" content="本部分以中国金币为例探索商品可能在<strong>不同时间、不同月份</strong>内可能存在的规律"></v-page>
     
         <div class="slide light-section">
@@ -175,16 +149,8 @@
             </div>
         </div>
 
-        <v-chart :option="option.cncoinWnT" content="<blockquote>注:中国金币与上币数据比例为50:1,为方便说明，此处将上币散点数据大小放大50倍。</blockquote>"></v-chart>
-        <div class="slide">
-            <div class="wrap">
-                <h4>中国金币系统建设情况分析</h4>
-                <div class="content">
-                    <img src="/static/img/section04/order-num.png" alt="每分钟订单数">
-                </div>
-            </div>
-            <arc-line :fill="'#4fc08d'"></arc-line>
-        </div>
+        <v-chart :option="option.cncoinWnT" content="<blockquote>注:中国金币与上币数据比例为50:1,为方便说明，此处将上币散点数据大小放大50倍。</blockquote>" :arc="'#4fc08d'"></v-chart>
+
     </div>
 </template>
 

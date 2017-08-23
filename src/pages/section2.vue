@@ -3,21 +3,12 @@
         <div class="slide green-section">
             <div class="wrap">
                 <h4>2.贵金属网络销售市场综述</h4>
-                <p class="content">市场生态、商品生命周期、市场有多大、什么值得卖</p>
+                <p class="content">市场生态、商品生命周期、市场规模、什么值得卖</p>
             </div>
         </div>
-        <div class="slide">
-            <div class="wrap">
-                <h4>1.市场生态</h4>
-                <div class="content">
-                    通过对金币公司、中钞旗下子公司、京东商城、天猫商城、周大福自营店等网络平台销售的贵金属
-                    <strong>商品名称进行分词</strong>统计，我们发现，
-                    <span class="underline">高频词语集中在各类首饰、对材质和等级的描述、纪念日和礼物上，贵金属货币相关词汇相对来说并没有进入最热等级的队列。</span>
-                </div>
-            </div>
-        </div>
+        
         <v-chart fill="true" :option="option.wordCloudAll" />
-        <v-chart :option="option.wordCloudTop100" />
+        
         <v-chart fill="true" :option="option.wordCloud" />
         <div class="slide">
             <div class="wrap">
@@ -30,28 +21,14 @@
                 </div>
             </div>
         </div>
-        <div class="slide light-section">
-            <div class="wrap">
-                <h4>金币总公司</h4>
-                <div class="content">
-                    <blockquote>
-                        中国金币总公司成立于1987年，是中国人民银行直属的我国
-                        <span class="bold red-text">唯一经营贵金属纪念币</span>的行业性公司，
-                        <span class="bold red-text">履行贵金属货币的发售职能</span>，是中央银行货币发行职能的重要组成部分和业务延伸，是中央银行货币发行的重要支撑体系之一。
-                        <h5 class="text-right">——— 中国金币总公司官网</h5>
-                    </blockquote>
-                    <div>中国金币网上商城的产品线设计、价格定位、市场营销手段相对京东来说都缺少变化和波动，下面着重分析的是
-                        <span class="underline">京东、天猫的市场生态情况</span>。</div>
-                </div>
-            </div>
-        </div>
+        
         <div class="slide">
             <div class="wrap">
                 <h4>2.商品生命周期</h4>
                 <div class="content">
                     <blockquote>
                         京东不显示商品交易记录但在用户评论中包含订单日期，只有
-                        <span class="underline">真实发生的订单</span>才能进行商品评论。我们按一条评论对应一个订单进行统计计算京东商品的
+                        <span class="underline">真实发生的订单</span>才能进行商品评论。<br>我们按一条评论对应一个订单进行统计计算京东商品的
                         <strong>销售热度</strong>，该数据是基于
                         <strong>250万</strong>笔订单生成。
                     </blockquote>
@@ -62,16 +39,12 @@
         <v-chart fill="true" :option="option.lifecycle" />
     
         <v-page title="产品线的维持" content="随着时间的推移存续的商品数逐渐减少，整体市场中商品相比热销商品的生命周期下降更为明显，这也意味着有大量的商品将被市场所淘汰，<strong>商家应当定期上新维持良好的产品线。</strong>" />
-    
-        <v-chart fill="true" :option="option.shopTop20" />
-    
+        
         <v-page title="长线产品" content="以周生生、周大福等商铺为代表的市场业绩较高的卖家，其<strong>长线产品</strong>对于商铺评价销售业绩的拉动十分显著。" />
     
         <v-chart fill="true" :option="option.top10lifecycle" />
-    
-        <v-chart :option="option.zss" />
-    
-        <v-page fill="true" content="<blockquote>综合对各个平台贵金属产品销售周期的观察和比较，我们认为，市场50%数量商品的销售周期不足400天，以此为参考，目前市面上业绩领先的贵金属网络商铺，其销售收入主要来源于长线产品，因此贵金属网络销售需要在多方面为长线产品做好准备，比如产品设计、市场营销策略和持续投入等等。</blockquote>" />
+        
+        <!-- <v-page content="<blockquote>综合对各个平台贵金属产品销售周期的观察和比较，我们认为，市场50%数量商品的销售周期不足400天，以此为参考，<strong style='text-red'>目前市面上业绩领先的贵金属网络商铺，其销售收入主要来源于长线产品</strong>，因此贵金属网络销售需要在多方面为长线产品做好准备，比如产品设计、市场营销策略和持续投入等等。</blockquote>" /> -->
     
         <v-page title="3.贵金属市场规模" content="以<strong>京东和天猫</strong>为代表的贵金属市场占据了整个充分竞争市场的绝大部分份额，我们将以这两个平台的历史销售记录推测市场规模。" />
     
@@ -103,9 +76,7 @@
     
         <v-chart :option="option.jdPriceTop100" />
     
-        <v-page fill="true" title="4.网购平台比较" content='<img src="/static/img/section01/platform.png" alt="网购平台比较">' />
-    
-        <v-page title="店铺对比" content="我们整理了贵金属市场中包括京东、天猫，以及各热销品牌自营店共计<strong>480余家</strong>商铺的相关信息，对这些商铺的<strong>地理分布情况、店内陈列的商品数量以及店龄长短</strong>进行了比较。" />
+        <v-page title="4.网购平台比较" content="我们整理了贵金属市场中包括京东、天猫，以及各热销品牌自营店共计<strong>480余家</strong>商铺的相关信息，对这些商铺的<strong>地理分布情况、店内陈列的商品数量以及店龄长短</strong>进行了比较。" />
     
         <v-chart fill="true" :option="option.jdShopNum" />
         <v-chart :option="option.jdGoodsNum" />

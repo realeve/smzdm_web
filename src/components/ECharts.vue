@@ -111,10 +111,13 @@ export default {
                     }
                 }
             }
-            if(typeof this.option.title == 'object'){
+            if (typeof this.option.title == 'object') {
                 this.option.title.top = 0;
-            }else{
+            } else {
                 this.option.title[0].top = 0;
+            }
+            if (Reflect.has(this.option, 'xAxis')) {
+                this.option.xAxis[0].boundaryGap = true;
             }
             this.chart.setOption(this.option);
         }
@@ -126,7 +129,8 @@ export default {
     width: 90%;
     height: 90%;
 }
-.content{
-    width:100%;
+
+.content {
+    width: 100%;
 }
 </style>

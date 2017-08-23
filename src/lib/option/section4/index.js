@@ -13,7 +13,7 @@ import cncoin2 from './cncoin2';
 
 import ctf from './ctf';
 import ctf2 from './ctf2';
-import ctf3 from './ctf2';
+import ctf3 from './ctf3';
 
 import goldPrice from './goldPrice';
 

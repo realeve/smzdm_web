@@ -62,7 +62,7 @@ let theme = {
                 "width": 2
             }
         },
-        "boundaryGap": 0,
+        "boundaryGap": true,
         "splitLine": {
             "show": false,
             "lineStyle": {

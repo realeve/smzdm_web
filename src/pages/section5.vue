@@ -17,16 +17,7 @@
                 </div>
             </div>
         </div>
-        <div class="slide light-section">
-            <div class="wrap">
-                <h4>页面中的数据</h4>
-                <div class="content">
-                    <p>尽管这些信息在页面中显示正常，但自建系统不规范的数据接口容易造成用户信息泄露。</p>
-                    <img src="/static/img/section05/cncoin.jpg" alt="用户身份信息">
-                </div>
-            </div>
-        </div>
-        
+                
         <div class="slide">
             <div class="wrap">
                 <h4>1100条用户手机信息</h4>
@@ -41,15 +32,6 @@
         <div class="slide">
             <div class="wrap">
                 <h4>用户个人信息安全</h4>
-                <div class="content">
-                    <blockquote>虽然从市场竞争的角度来讲可以针对友商的这种不完善收集相关数据用作营销，但从平台方的角度来讲，自建销售平台应该加强安全审核。针对平台返回的所有数据及所有接口涉及用户信息的做好保密工作，某些重要信息的泄露可能会给用户带来财产损失，同时也对平台带来负面影响。</blockquote>
-                </div>
-            </div>
-        </div>
-
-        <div class="slide light-section">
-            <div class="wrap">
-                <h4>店铺数据价值</h4>
                 <div class="content">
                     <blockquote>虽然从市场竞争的角度来讲可以针对友商的这种不完善收集相关数据用作营销，但从平台方的角度来讲，<strong>自建销售平台应该加强安全审核</strong>。针对平台返回的所有数据及所有接口涉及用户信息的做好保密工作，某些重要信息的泄露可能会给用户带来财产损失，同时也对平台带来负面影响。</blockquote>
                 </div>
@@ -78,17 +60,7 @@
                 </div>
             </div>
         </div>
-        
-        <div class="slide">
-            <div class="wrap">
-                <h4>良好的反爬虫策略</h4>
-                <div class="content">
-                    <p>虽然这种反爬虫容易被绕过，但也能预防大多数不具经验的初级用户。</p>
-                    <img src="/static/img/section05/ctf02.jpg" alt="周大福">
-                </div>
-            </div>
-        </div>
-        
+                
         <div class="slide">
             <div class="wrap">
                 <h4>隐藏必要的数据</h4>
