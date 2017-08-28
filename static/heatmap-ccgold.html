@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    .heatmap {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    
+    .heatmap-wrapper {
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: .3s ease all;
+        opacity: .6;
+        width: 100%;
+        height: 100vh;
+    }
+    body{
+      margin:0;
+      padding:0;
+      background:url('./main.png');
+      background-position:center;
+      background-size:100% 100%;
+      width:100%;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="heatmap-wrapper">
+        <div class="heatmap">
+        </div>
+    </div>
+    <script src="http://cdn.bootcss.com/heatmap.js/2.0.2/heatmap.js"></script>
+    <script>
+    var body = document.body;
+    body.style.minHeight = window.innerHeight +'px';
+    var bodyStyle = getComputedStyle(body);
+    var hm = document.querySelector('.heatmap');
+    var heatmap = h337.create({
+        container: hm,
+        radius: 20
+    });
+    var trackData = false;
+    setInterval(function() {
+        trackData = true;
+    }, 50);
+    var idleTimeout, idleInterval;
+    var lastX, lastY;
+    var idleCount;
+
+    function startIdle() {
+        idleCount = 0;
+
+        function idle() {
+            heatmap.addData({
+                x: lastX,
+                y: lastY
+            });
+            idleCount++;
+            if (idleCount > 10) {
+                clearInterval(idleInterval);
+            }
+        };
+        idle();
+        idleInterval = setInterval(idle, 1000);
+    };
+    body.onmousemove = function(ev) {
+        if (idleTimeout) clearTimeout(idleTimeout);
+        if (idleInterval) clearInterval(idleInterval);
+        if (trackData) {
+            lastX = ev.pageX;
+            lastY = ev.pageY;
+            heatmap.addData({
+                x: lastX,
+                y: lastY
+            });
+            trackData = false;
+        }
+        idleTimeout = setTimeout(startIdle, 50);
+    };
+    </script>
+</body>
+
+</html>
