@@ -87,13 +87,13 @@ export default {
     },
     initChart() {
       // SVG渲染折线图和饼图的效率更高，而由于Canvas渲染矩形的效率很高，所以柱状图使用Canvas渲染的效率高于SVG。
-      let chartType =
-        this.option.series.type == undefined
-          ? this.option.series[0].type
-          : this.option.series.type;
-      if (["treemap", "bar", "scatter"].includes(chartType)) {
-        this.render = "canvas";
-      }
+      //   let chartType =
+      //     this.option.series.type == undefined
+      //       ? this.option.series[0].type
+      //       : this.option.series.type;
+      //   if (["treemap", "bar", "scatter"].includes(chartType)) {
+      //     this.render = "canvas";
+      //   }
 
       // 文字云导出时，自定义函数无法输出
       if (
