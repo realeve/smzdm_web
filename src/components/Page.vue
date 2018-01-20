@@ -55,14 +55,14 @@ export default {
       }
     },
     // 第二页打字效果初始化
-    // typeStatus: {
-    //   get() {
-    //     return this.$store.state.typeStatus;
-    //   },
-    //   set(val) {
-    //     this.$store.commit('initTyped', val);
-    //   }
-    // },
+    typeStatus: {
+      get() {
+        return this.$store.state.typeStatus;
+      },
+      set(val) {
+        this.$store.commit("initTyped", val);
+      }
+    },
     tips: {
       get() {
         return this.$store.state.tips;

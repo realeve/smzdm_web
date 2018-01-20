@@ -14,20 +14,20 @@
 export default {
   data() {
     return {
-      clock: '',
+      clock: "",
       seconds: 0
-    }
+    };
   },
   computed: {
     playAudio() {
-      return false;//process.env.NODE_ENV !== 'mobile';
+      return process.env.NODE_ENV !== "mobile";
     },
     tips: {
       get() {
         return this.$store.state.tips;
       },
       set(val) {
-        this.$store.commit('setTips', val);
+        this.$store.commit("setTips", val);
       }
     }
   },
@@ -41,11 +41,13 @@ export default {
     calcTime() {
       let hour = Math.floor(this.seconds / 3600);
       hour = hour % 24;
-      let minutes = Math.floor(this.seconds % 3600 / 60);
+      let minutes = Math.floor((this.seconds % 3600) / 60);
       let seconds = Math.floor(this.seconds % 60);
-      let mmss = `${(minutes > 9 ? '' : '0') + minutes}:${(seconds > 9 ? '' : '0') + seconds}`;
+      let mmss = `${(minutes > 9 ? "" : "0") + minutes}:${(seconds > 9
+        ? ""
+        : "0") + seconds}`;
       if (hour > 0) {
-        return `${(hour > 9 ? '' : '0') + hour}:${mmss}`;
+        return `${(hour > 9 ? "" : "0") + hour}:${mmss}`;
       }
       return mmss;
     },

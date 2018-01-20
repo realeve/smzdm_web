@@ -12,7 +12,7 @@
                     <h3>中国贵金属网上销售市场分析</h3>
                     <small>技术质量部 李宾</small>
                     <small>企管规划部 倪震</small>
-                    <p>www.cbpc.ltd</p>
+                    <p v-if="!showFooter">www.cbpc.ltd</p>
                 </div>
                 <div class="footer" v-if="showFooter">
                     <small>
