@@ -12,8 +12,7 @@
   },
   "dependencies": {
     "clipboard": "^1.7.1",
-    "echarts": "^3.6.2",
-    "echarts-gl": "^1.0.0-beta.4",
+    "echarts": "^4.0.2",
     "echarts-wordcloud": "^1.1.0",
     "fullpage.js": "^2.9.4",
     "g2": "^2.3.9",

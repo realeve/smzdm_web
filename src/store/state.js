@@ -1,8 +1,8 @@
 const state = {
-    inited:false,
+    inited: false,
     // typeStatus:false,
-    terminalStatus:false,
-    tips:''
+    terminalStatus: false,
+    tips: ''
 }
 
 export default state

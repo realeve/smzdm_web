@@ -1,5 +1,5 @@
 <template>
-  <ul id="nav">
+  <ul id="nav" v-once>
     <li data-menuanchor="home" class="active">
       <a href="#home">首页</a>
     </li>
@@ -28,8 +28,9 @@
   </ul>
 </template>
 
-<script>
-export default {
-  name: 'menu'
-};
+// <script>
+// export default {
+//   name: 'menu'
+// };
+//
 </script>

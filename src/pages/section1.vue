@@ -21,7 +21,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="slide">
             <div class="wrap">
                 <h4>数据采集与存储</h4>
@@ -41,11 +41,13 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="slide">
+
+        <!-- 模拟数据采集过程 -->
+        <div class="slide">
             <div class="wrap">
                 <terminal></terminal>
             </div>
-        </div> -->
+        </div>
         <!-- <div  class="slide light-section">
              <video loop muted autoplay data-autoplay>
                 <source src="/static/video/web_crawler_sample01.mp4" type="video/mp4">
@@ -56,20 +58,20 @@
                 <source src="/static/video/web_crawler_sample02.mp4" type="video/mp4">
             </video>
         </div> -->
-    
+
         <v-page title="异常情况自动发送邮件" content='<img src="/static/img/section01/mail.jpg" alt="爬虫错误提示">' />
-    
+
         <div class="slide">
             <div class="wrap">
                 <h4>中文分词</h4>
                 <!-- @click="segWord" :class="{word:wordStatus}" -->
                 <div class="content segment">
-                    <span v-for="word in wordSeg" :key="word" :class="{'red-text':word=='商品'}">{{word}}</span>
+                    <span v-for="(word,i) in wordSeg" :key="i" :class="{'red-text':word=='商品'}">{{word}}</span>
                     <h6>(鼠标移至上方文字分词)</h6>
                 </div>
             </div>
         </div>
-        
+
         <div class="slide light-section">
             <div class="wrap">
                 <h4>自然语言处理(NLP)</h4>
@@ -85,7 +87,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="slide light-section">
             <div class="wrap">
                 <h4>数据计算及可视化</h4>
@@ -107,78 +109,133 @@
     </div>
 </template>
 <style lang="less" scoped>
-
 .segment {
+  span {
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    transition: 1s margin, 0s 1s background;
+    transition-timing-function: linear;
+  }
+  &:hover {
     span {
-        background: rgba(0, 0, 0, 0.8);
-        color: #fff;
-        transition: 1s margin,0s 1s background;
-        transition-timing-function: linear;
+      margin: 0 5px;
+      border-radius: 2px;
     }
-    &:hover {
-        span {
-            margin: 0 5px;
-            border-radius: 2px;
-        }
-        .red-text{
-            background: #f66;
-        }
+    .red-text {
+      background: #f66;
     }
+  }
 }
 
 @bar-height: 50px;
 @seg-value: 55%;
 @pad-top: 10px;
 .bar {
-    height: @bar-height;
-    width: 80%;
-    background: #1c8bea;
-    margin: 30px auto;
-    border-radius: @bar-height/2;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
-    display: flex;
-    color: #fff;
-    font-size: 14pt;
-    .text {
-        padding-left: 20px;
-        padding-top: @pad-top;
+  height: @bar-height;
+  width: 80%;
+  background: #1c8bea;
+  margin: 30px auto;
+  border-radius: @bar-height/2;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  display: flex;
+  color: #fff;
+  font-size: 14pt;
+  .text {
+    padding-left: 20px;
+    padding-top: @pad-top;
+  }
+  .negative {
+    width: @seg-value;
+    background: #ea3c3e;
+    border-radius: @bar-height/2 0 0 @bar-height/2;
+    height: 100%;
+    position: relative;
+    text-align: right;
+    padding-top: @pad-top;
+    padding-right: 20px;
+    &:after {
+      content: "";
+      width: 5px;
+      height: @bar-height+10;
+      position: absolute;
+      right: -3px;
+      top: -5px;
+      background: #fff;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+      border-radius: 3px;
     }
-    .negative {
-        width: @seg-value;
-        background: #ea3c3e;
-        border-radius: @bar-height/2 0 0 @bar-height/2;
-        height: 100%;
-        position: relative;
-        text-align: right;
-        padding-top: @pad-top;
-        padding-right: 20px;
-        &:after {
-            content: "";
-            width: 5px;
-            height: @bar-height+10;
-            position: absolute;
-            right: -3px;
-            top: -5px;
-            background: #fff;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
-            border-radius: 3px;
-        }
-    }
+  }
 }
 </style>
 <script>
-import Terminal from '../components/Terminal';
+import Terminal from "../components/Terminal";
 
 export default {
-    components: {
-        Terminal
-    },
-    data() {
-        return {
-            mobile:process.env.NODE_ENV !== 'mobile',
-            wordStatus: false,
-            wordSeg: ['亚马逊', '平台', '曾经', '的', '统计', '数据', '表示', '，', '具有', '差', '评', '的', '商品', '平均', '转化率', '甚至', '还', '高于', '没有', '评价', '的', '商品', '。', '评价', '作为', '商家', '服务', '的', '表象', '体现', '，', '既', '承载', '了', '用户', '对于', '商品', '和', '服务', '的', '意见', '和', '态度', '，', '更', '承载', '了', '用户', '对', '商品', '和', '服务', '的', '诉求', '。']
-        };
-    }
+  components: {
+    Terminal
+  },
+  data() {
+    return {
+      mobile: process.env.NODE_ENV !== "mobile",
+      wordStatus: false,
+      wordSeg: [
+        "亚马逊",
+        "平台",
+        "曾经",
+        "的",
+        "统计",
+        "数据",
+        "表示",
+        "，",
+        "具有",
+        "差",
+        "评",
+        "的",
+        "商品",
+        "平均",
+        "转化率",
+        "甚至",
+        "还",
+        "高于",
+        "没有",
+        "评价",
+        "的",
+        "商品",
+        "。",
+        "评价",
+        "作为",
+        "商家",
+        "服务",
+        "的",
+        "表象",
+        "体现",
+        "，",
+        "既",
+        "承载",
+        "了",
+        "用户",
+        "对于",
+        "商品",
+        "和",
+        "服务",
+        "的",
+        "意见",
+        "和",
+        "态度",
+        "，",
+        "更",
+        "承载",
+        "了",
+        "用户",
+        "对",
+        "商品",
+        "和",
+        "服务",
+        "的",
+        "诉求",
+        "。"
+      ]
+    };
+  }
 };
 </script>
